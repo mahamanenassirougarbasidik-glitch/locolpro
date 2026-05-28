@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocolPro — La gestion scolaire, enfin centralisée</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+</head>
+<body data-screen-label="Home">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="LocolPro">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="logo-wordmark">
+          <span class="locol">LocolPro</span>
+          <span class="pro" data-fr="Gestion scolaire" data-en="School management">Gestion scolaire</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principale">
+        <a href="index.html" class="active" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+        <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+        <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+        <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Langue">
+          <button data-lang="fr" class="active">FR</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a href="#" class="btn btn-ghost" data-fr="Se connecter" data-en="Log in">Se connecter</a>
+        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <button class="nav-burger" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="active" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <div class="mm-cta">
+      <a href="contact.html" class="btn btn-primary btn-lg" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+      <a href="#" class="btn btn-ghost btn-lg" data-fr="Se connecter" data-en="Log in">Se connecter</a>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-particles"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="hero-badge"><span class="pulse"></span><span data-fr="Plateforme nº1 des écoles bilingues" data-en="#1 platform for bilingual schools">Plateforme nº1 des écoles bilingues</span></span>
+          <h1 data-fr="La gestion scolaire, <em>enfin centralisée.</em>" data-en="School management, <em>finally centralized.</em>">La gestion scolaire, <em>enfin centralisée.</em></h1>
+          <p class="hero-lead" data-fr="Élèves, enseignants, parents et administration réunis sur une seule plateforme. Notes, paiements, présences et communication — pilotés depuis un même endroit, en français comme en anglais." data-en="Students, teachers, parents and administration on a single platform. Grades, payments, attendance and communication — all run from one place, in French and English.">
+            Élèves, enseignants, parents et administration réunis sur une seule plateforme. Notes, paiements, présences et communication — pilotés depuis un même endroit, en français comme en anglais.
+          </p>
+          <div class="hero-btns">
+            <a href="contact.html" class="btn btn-primary btn-xl" data-fr="Demander une démo gratuite" data-en="Request a free demo">
+              Demander une démo gratuite
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="fonctionnalites.html" class="btn btn-light btn-xl" data-fr="Voir les fonctionnalités" data-en="See features">Voir les fonctionnalités</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-avatars">
+              <span class="trust-av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&q=80&auto=format&fit=crop')"></span>
+              <span class="trust-av" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop')"></span>
+              <span class="trust-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop')"></span>
+              <span class="trust-av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&auto=format&fit=crop')"></span>
+            </div>
+            <div class="trust-text" data-fr="<strong>40+ établissements</strong> nous font déjà confiance" data-en="<strong>40+ schools</strong> already trust us"><strong>40+ établissements</strong> nous font déjà confiance</div>
+          </div>
+        </div>
+
+        <!-- App preview -->
+        <div class="hero-preview">
+          <div class="preview-bar">
+            <div class="preview-dots"><span class="pd" style="background:#ff5f57"></span><span class="pd" style="background:#febc2e"></span><span class="pd" style="background:#28c840"></span></div>
+            <div class="preview-url">app.locolpro.com/tableau-de-bord</div>
+          </div>
+          <div class="preview-body">
+            <aside class="preview-sidebar">
+              <div class="p-logo">
+                <span class="ico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>
+                <span>Locol<em>Pro</em></span>
+              </div>
+              <div class="p-item act"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span><span data-fr="Tableau de bord" data-en="Dashboard">Tableau de bord</span></div>
+              <div class="p-item"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M16 7h5M16 11h5"/></svg></span><span data-fr="Élèves" data-en="Students">Élèves</span></div>
+              <div class="p-item"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span data-fr="Notes" data-en="Grades">Notes</span></div>
+              <div class="p-item"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span data-fr="Présences" data-en="Attendance">Présences</span></div>
+              <div class="p-item"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span><span data-fr="Paiements" data-en="Payments">Paiements</span></div>
+              <div class="p-item"><span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></span><span data-fr="Messages" data-en="Messages">Messages</span></div>
+            </aside>
+            <main class="preview-main">
+              <div class="pm-header">
+                <div class="pm-title" data-fr="Bonjour, Aïcha 👋" data-en="Hello, Aïcha 👋">Bonjour, Aïcha 👋</div>
+                <div class="pm-date" data-fr="Lundi 15 avril 2026" data-en="Monday, April 15, 2026">Lundi 15 avril 2026</div>
+              </div>
+              <div class="stats-row">
+                <div class="stat-c"><div class="stat-n">1248</div><div class="stat-l" data-fr="Élèves" data-en="Students">Élèves</div><div class="stat-trend">+84 ↑</div></div>
+                <div class="stat-c"><div class="stat-n green">94%</div><div class="stat-l" data-fr="Présence" data-en="Attendance">Présence</div><div class="stat-trend">+2,1% ↑</div></div>
+                <div class="stat-c"><div class="stat-n amber">82%</div><div class="stat-l" data-fr="Paiements" data-en="Payments">Paiements</div><div class="stat-trend">+18% ↑</div></div>
+                <div class="stat-c"><div class="stat-n">42</div><div class="stat-l" data-fr="Profs" data-en="Teachers">Profs</div><div class="stat-trend" style="color:var(--gray-400)">—</div></div>
+              </div>
+              <div class="pm-grid">
+                <div class="pm-card">
+                  <div class="pm-card-head" data-fr="Derniers bulletins · 3e B" data-en="Latest reports · 3rd B">Derniers bulletins · 3e B</div>
+                  <div class="pm-row"><span class="name">Mariam Koffi</span><span>15,4/20</span><span class="badge g" data-fr="Validé" data-en="Done">Validé</span></div>
+                  <div class="pm-row"><span class="name">Ousmane Diop</span><span>13,8/20</span><span class="badge g" data-fr="Validé" data-en="Done">Validé</span></div>
+                  <div class="pm-row"><span class="name">Fatou Ndiaye</span><span>17,1/20</span><span class="badge a" data-fr="En cours" data-en="Pending">En cours</span></div>
+                  <div class="pm-row"><span class="name">Jean-Paul Abena</span><span>12,3/20</span><span class="badge g" data-fr="Validé" data-en="Done">Validé</span></div>
+                </div>
+                <div class="pm-card">
+                  <div class="pm-card-head" data-fr="Encaissements" data-en="Receipts">Encaissements</div>
+                  <div class="mini-chart">
+                    <div class="chart-bar-wrap">
+                      <span class="cb navy-bar" style="height:45%"></span>
+                      <span class="cb navy-bar" style="height:60%"></span>
+                      <span class="cb green-bar" style="height:72%"></span>
+                      <span class="cb navy-bar" style="height:58%"></span>
+                      <span class="cb green-bar" style="height:85%"></span>
+                      <span class="cb green-bar" style="height:95%"></span>
+                    </div>
+                    <div class="chart-labels"><span class="cl">N</span><span class="cl">D</span><span class="cl">J</span><span class="cl">F</span><span class="cl">M</span><span class="cl">A</span></div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+          <div class="preview-pop">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span>
+            <div>
+              <div class="title" data-fr="Paiement reçu" data-en="Payment received">Paiement reçu</div>
+              <div class="sub" data-fr="Famille Diop · 150 000 FCFA" data-en="Diop family · 150,000 FCFA">Famille Diop · 150 000 FCFA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST MARQUEE ===================== -->
+  <div class="trust-band">
+    <div class="trust-band-inner">
+      <span class="trust-label-band" data-fr="Ils utilisent LocolPro" data-en="They use LocolPro">Ils utilisent LocolPro</span>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="school-pill"><span class="dot"></span>Collège Horizon</span>
+          <span class="school-pill"><span class="dot"></span>Lycée Bilingue de Douala</span>
+          <span class="school-pill"><span class="dot"></span>École Sainte-Marie</span>
+          <span class="school-pill"><span class="dot"></span>Groupe Educo</span>
+          <span class="school-pill"><span class="dot"></span>Institut Objectif</span>
+          <span class="school-pill"><span class="dot"></span>Cité Scolaire Excellence</span>
+          <span class="school-pill"><span class="dot"></span>Complexe La Réussite</span>
+          <!-- duplicate for seamless loop -->
+          <span class="school-pill"><span class="dot"></span>Collège Horizon</span>
+          <span class="school-pill"><span class="dot"></span>Lycée Bilingue de Douala</span>
+          <span class="school-pill"><span class="dot"></span>École Sainte-Marie</span>
+          <span class="school-pill"><span class="dot"></span>Groupe Educo</span>
+          <span class="school-pill"><span class="dot"></span>Institut Objectif</span>
+          <span class="school-pill"><span class="dot"></span>Cité Scolaire Excellence</span>
+          <span class="school-pill"><span class="dot"></span>Complexe La Réussite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WHY ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal-on-view">
+        <span class="section-eyebrow"><span class="dot"></span><span data-fr="Pourquoi LocolPro" data-en="Why LocolPro">Pourquoi LocolPro</span></span>
+        <h2 class="section-h" data-fr="Conçu pour les écoles <em>d'aujourd'hui.</em>" data-en="Built for <em>today's</em> schools.">Conçu pour les écoles <em>d'aujourd'hui.</em></h2>
+        <p class="section-sub" data-fr="Une plateforme pensée avec les chefs d'établissement, les enseignants et les familles. Simple à adopter, robuste au quotidien, sécurisée par défaut." data-en="A platform designed with school heads, teachers and families. Easy to adopt, robust day-to-day, secure by default.">
+          Une plateforme pensée avec les chefs d'établissement, les enseignants et les familles. Simple à adopter, robuste au quotidien, sécurisée par défaut.
+        </p>
+      </div>
+
+      <div class="feat-grid">
+        <div class="feat-card reveal-on-view">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+          <h3 class="feat-h" data-fr="Tout au même endroit" data-en="Everything in one place">Tout au même endroit</h3>
+          <p class="feat-p" data-fr="Élèves, classes, notes, présences, frais : une seule plateforme, une seule source de vérité pour toute l'école." data-en="Students, classes, grades, attendance, fees: one platform, one source of truth for the whole school.">
+            Élèves, classes, notes, présences, frais : une seule plateforme, une seule source de vérité pour toute l'école.
+          </p>
+        </div>
+
+        <div class="feat-card reveal-on-view delay-1">
+          <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg></div>
+          <h3 class="feat-h" data-fr="Prise en main immédiate" data-en="Instant onboarding">Prise en main immédiate</h3>
+          <p class="feat-p" data-fr="L'interface s'apprend en moins d'une heure. Les enseignants saisissent leurs notes en quelques clics, sur tout appareil." data-en="The interface learns in under an hour. Teachers enter grades in a few clicks, on any device.">
+            L'interface s'apprend en moins d'une heure. Les enseignants saisissent leurs notes en quelques clics, sur tout appareil.
+          </p>
+        </div>
+
+        <div class="feat-card reveal-on-view delay-2">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 class="feat-h" data-fr="Sécurité de niveau pro" data-en="Pro-grade security">Sécurité de niveau pro</h3>
+          <p class="feat-p" data-fr="Données chiffrées, sauvegardes quotidiennes, accès strictement par rôle. Vos données restent vos données." data-en="Encrypted data, daily backups, strict role-based access. Your data stays your data.">
+            Données chiffrées, sauvegardes quotidiennes, accès strictement par rôle. Vos données restent vos données.
+          </p>
+        </div>
+
+        <!-- Large bento card with image -->
+        <div class="feat-card bento-lg reveal-on-view">
+          <div>
+            <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3 class="feat-h" data-fr="Des parents enfin informés" data-en="Parents finally in the loop">Des parents enfin informés</h3>
+            <p class="feat-p" data-fr="Notes, absences, paiements, annonces : les familles reçoivent l'information en temps réel, dans leur langue. Fini les carnets perdus." data-en="Grades, absences, payments, announcements: families get info in real time, in their language. No more lost notebooks.">
+              Notes, absences, paiements, annonces : les familles reçoivent l'information en temps réel, dans leur langue. Fini les carnets perdus.
+            </p>
+            <ul class="feat-list">
+              <li data-fr="Notifications instantanées (SMS, e-mail, WhatsApp)" data-en="Instant notifications (SMS, email, WhatsApp)">Notifications instantanées (SMS, e-mail, WhatsApp)</li>
+              <li data-fr="Messagerie directe école ↔ famille" data-en="Direct school ↔ family messaging">Messagerie directe école ↔ famille</li>
+            </ul>
+          </div>
+          <div class="feat-illust" style="background-image:url('https://images.unsplash.com/photo-1591382386627-349b692688ff?w=800&q=80&auto=format&fit=crop')"></div>
+        </div>
+
+        <!-- Dark card -->
+        <div class="feat-card bento-dark reveal-on-view delay-1">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+          <h3 class="feat-h" data-fr="Bilingue FR / EN" data-en="Bilingual FR / EN">Bilingue FR / EN</h3>
+          <p class="feat-p" data-fr="Chaque utilisateur choisit sa langue. Bulletins, e-mails et notifications partent dans la langue de chacun." data-en="Each user picks their language. Reports, emails and notifications go out in everyone's language.">
+            Chaque utilisateur choisit sa langue. Bulletins, e-mails et notifications partent dans la langue de chacun.
+          </p>
+          <ul class="feat-list">
+            <li data-fr="Idéal pour les établissements bilingues" data-en="Ideal for bilingual schools">Idéal pour les établissements bilingues</li>
+            <li data-fr="Aucune configuration requise" data-en="Zero configuration required">Aucune configuration requise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS STRIP ===================== -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+      <div class="reveal-on-view">
+        <div class="sg-num"><span data-count="40" data-suffix="+">0</span></div>
+        <div class="sg-lbl" data-fr="Écoles accompagnées" data-en="Schools onboarded">Écoles accompagnées</div>
+      </div>
+      <div class="reveal-on-view delay-1">
+        <div class="sg-num"><span data-count="38000" data-suffix="+">0</span></div>
+        <div class="sg-lbl" data-fr="Élèves gérés" data-en="Students managed">Élèves gérés</div>
+      </div>
+      <div class="reveal-on-view delay-2">
+        <div class="sg-num"><span data-count="70" data-suffix="%">0</span></div>
+        <div class="sg-lbl" data-fr="De temps administratif gagné" data-en="Admin time saved">De temps administratif gagné</div>
+      </div>
+      <div class="reveal-on-view delay-3">
+        <div class="sg-num"><span data-count="99.9" data-suffix="%">0</span></div>
+        <div class="sg-lbl" data-fr="Disponibilité de la plateforme" data-en="Platform uptime">Disponibilité de la plateforme</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES OVERVIEW ===================== -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal-on-view">
+        <span class="section-eyebrow navy"><span class="dot"></span><span data-fr="Fonctionnalités clés" data-en="Key features">Fonctionnalités clés</span></span>
+        <h2 class="section-h" data-fr="8 modules. <em>Une seule plateforme.</em>" data-en="8 modules. <em>One platform.</em>">8 modules. <em>Une seule plateforme.</em></h2>
+        <p class="section-sub" data-fr="Tout est inclus dès le départ. Pas d'options payantes, pas de plug-ins cachés." data-en="Everything included from the start. No paid options, no hidden plug-ins.">
+          Tout est inclus dès le départ. Pas d'options payantes, pas de plug-ins cachés.
+        </p>
+      </div>
+
+      <div class="feat-grid">
+        <a href="fonctionnalites.html#eleves" class="feat-card reveal-on-view">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+          <h3 class="feat-h" data-fr="Gestion des élèves" data-en="Student management">Gestion des élèves</h3>
+          <p class="feat-p" data-fr="Dossiers complets, affectation aux classes, suivi des notes et du parcours." data-en="Full records, class assignment, grade and journey tracking.">Dossiers complets, affectation aux classes, suivi des notes et du parcours.</p>
+        </a>
+        <a href="fonctionnalites.html#enseignants" class="feat-card reveal-on-view delay-1">
+          <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M3 17h18M9 9l3 2-3 2"/></svg></div>
+          <h3 class="feat-h" data-fr="Enseignants & personnel" data-en="Teachers & staff">Enseignants & personnel</h3>
+          <p class="feat-p" data-fr="Profils, attribution des matières, suivi pédagogique, accès par rôle." data-en="Profiles, subject assignment, pedagogical follow-up, role access.">Profils, attribution des matières, suivi pédagogique, accès par rôle.</p>
+        </a>
+        <a href="fonctionnalites.html#notes" class="feat-card reveal-on-view delay-2">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div>
+          <h3 class="feat-h" data-fr="Notes & bulletins" data-en="Grades & reports">Notes & bulletins</h3>
+          <p class="feat-p" data-fr="Saisie rapide, calcul automatique, bulletins générés aux normes." data-en="Fast entry, auto-calculation, standards-compliant reports.">Saisie rapide, calcul automatique, bulletins générés aux normes.</p>
+        </a>
+        <a href="fonctionnalites.html#presences" class="feat-card reveal-on-view">
+          <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 13l2 2 4-4"/></svg></div>
+          <h3 class="feat-h" data-fr="Présences & retards" data-en="Attendance">Présences & retards</h3>
+          <p class="feat-p" data-fr="Appel en 30 secondes, alertes automatiques aux parents, rapports." data-en="30-second roll call, auto parent alerts, reports.">Appel en 30 secondes, alertes automatiques aux parents, rapports.</p>
+        </a>
+        <a href="fonctionnalites.html#frais" class="feat-card reveal-on-view delay-1">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 11h18M7 15h3"/></svg></div>
+          <h3 class="feat-h" data-fr="Frais & paiements" data-en="Fees & payments">Frais & paiements</h3>
+          <p class="feat-p" data-fr="Paramétrage, suivi, gestion des impayés, comptabilité intégrée." data-en="Setup, tracking, unpaid management, built-in accounting.">Paramétrage, suivi, gestion des impayés, comptabilité intégrée.</p>
+        </a>
+        <a href="fonctionnalites.html#securite" class="feat-card reveal-on-view delay-2">
+          <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3 class="feat-h" data-fr="Sécurité & accès" data-en="Security & access">Sécurité & accès</h3>
+          <p class="feat-p" data-fr="Rôles personnalisés, chiffrement, sauvegardes, journaux d'audit." data-en="Custom roles, encryption, backups, audit logs.">Rôles personnalisés, chiffrement, sauvegardes, journaux d'audit.</p>
+        </a>
+      </div>
+
+      <div style="text-align:center; margin-top:48px" class="reveal-on-view">
+        <a href="fonctionnalites.html" class="btn btn-ghost btn-lg" data-fr="Explorer les 8 modules" data-en="Explore all 8 modules">
+          Explorer les 8 modules
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PHOTO SPLIT — BENEFITS ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="photo-split">
+        <div class="photo-split-img reveal-on-view">
+          <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=900&q=80&auto=format&fit=crop" alt="" loading="lazy" />
+          <div class="badge-overlay">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span>
+            <div>
+              <div class="label" data-fr="Bulletins envoyés ce trimestre" data-en="Reports sent this term">Bulletins envoyés ce trimestre</div>
+              <div class="value" data-fr="387 en 4 minutes" data-en="387 in 4 minutes">387 en 4 minutes</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-on-view delay-1">
+          <span class="section-eyebrow"><span class="dot"></span><span data-fr="Avantages pour les écoles" data-en="School benefits">Avantages pour les écoles</span></span>
+          <h2 class="section-h" data-fr="Du temps gagné. <em>Une école qui respire.</em>" data-en="Time saved. <em>A school that breathes.</em>">Du temps gagné. <em>Une école qui respire.</em></h2>
+          <p class="section-sub" data-fr="LocolPro libère vos équipes des tâches répétitives pour qu'elles se concentrent sur l'essentiel : les élèves." data-en="LocolPro frees your teams from repetitive tasks so they can focus on what matters: the students.">
+            LocolPro libère vos équipes des tâches répétitives pour qu'elles se concentrent sur l'essentiel : les élèves.
+          </p>
+          <div class="advantage-list">
+            <div class="advantage-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div>
+                <h4 data-fr="−70 % de temps administratif" data-en="−70% admin time">−70 % de temps administratif</h4>
+                <p data-fr="Fini les classeurs et tableurs : les processus sont automatisés de bout en bout." data-en="No more binders and spreadsheets: processes are automated end to end.">Fini les classeurs et tableurs : les processus sont automatisés de bout en bout.</p>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <span class="ic green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 11h18"/></svg></span>
+              <div>
+                <h4 data-fr="Moins d'impayés, comptabilité claire" data-en="Fewer unpaid fees, clear accounts">Moins d'impayés, comptabilité claire</h4>
+                <p data-fr="Relances automatiques, rapports financiers, vision instantanée de la trésorerie." data-en="Auto reminders, financial reports, instant cashflow view.">Relances automatiques, rapports financiers, vision instantanée de la trésorerie.</p>
+              </div>
+            </div>
+            <div class="advantage-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+              <div>
+                <h4 data-fr="Des décisions guidées par la donnée" data-en="Data-guided decisions">Des décisions guidées par la donnée</h4>
+                <p data-fr="Le chef d'établissement pilote la performance de son école au quotidien, en un coup d'œil." data-en="The head of school steers performance daily, at a glance.">Le chef d'établissement pilote la performance de son école au quotidien, en un coup d'œil.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROLES ===================== -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal-on-view">
+        <span class="section-eyebrow navy"><span class="dot"></span><span data-fr="Pour chaque profil" data-en="For every profile">Pour chaque profil</span></span>
+        <h2 class="section-h" data-fr="Une interface adaptée à <em>chacun.</em>" data-en="An interface tailored to <em>everyone.</em>">Une interface adaptée à <em>chacun.</em></h2>
+        <p class="section-sub" data-fr="Cinq profils, cinq expériences. Chacun voit exactement ce dont il a besoin." data-en="Five profiles, five experiences. Everyone sees exactly what they need.">
+          Cinq profils, cinq expériences. Chacun voit exactement ce dont il a besoin.
+        </p>
+      </div>
+
+      <div class="roles-grid">
+        <div class="role-card reveal-on-view">
+          <div class="role-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/></svg></div>
+          <div class="role-name" data-fr="Super Admin" data-en="Super Admin">Super Admin</div>
+          <div class="role-desc" data-fr="Gestion globale du groupe d'écoles." data-en="Global multi-school management.">Gestion globale du groupe d'écoles.</div>
+        </div>
+        <div class="role-card reveal-on-view delay-1">
+          <div class="role-av green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
+          <div class="role-name" data-fr="Administrateur" data-en="Administrator">Administrateur</div>
+          <div class="role-desc" data-fr="Direction et vie de l'établissement." data-en="Leadership and school life.">Direction et vie de l'établissement.</div>
+        </div>
+        <div class="role-card reveal-on-view delay-2">
+          <div class="role-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+          <div class="role-name" data-fr="Intendant" data-en="Bursar">Intendant</div>
+          <div class="role-desc" data-fr="Frais, paiements et comptabilité." data-en="Fees, payments and accounting.">Frais, paiements et comptabilité.</div>
+        </div>
+        <div class="role-card reveal-on-view delay-3">
+          <div class="role-av green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M3 18h18M9 8l3 2-3 2"/></svg></div>
+          <div class="role-name" data-fr="Enseignant" data-en="Teacher">Enseignant</div>
+          <div class="role-desc" data-fr="Notes, appel, communication classe." data-en="Grades, roll call, class comms.">Notes, appel, communication classe.</div>
+        </div>
+        <div class="role-card reveal-on-view delay-4">
+          <div class="role-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-3 4 4 0 0 1 7 3c0 5.5-7 10-7 10z"/></svg></div>
+          <div class="role-name" data-fr="Parent" data-en="Parent">Parent</div>
+          <div class="role-desc" data-fr="Suivi de l'enfant, paiements, messages." data-en="Child tracking, payments, messages.">Suivi de l'enfant, paiements, messages.</div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:48px" class="reveal-on-view">
+        <a href="plateforme.html" class="btn btn-ghost btn-lg" data-fr="Découvrir la plateforme" data-en="Discover the platform">
+          Découvrir la plateforme
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal-on-view">
+        <span class="section-eyebrow"><span class="dot"></span><span data-fr="Témoignages" data-en="Testimonials">Témoignages</span></span>
+        <h2 class="section-h" data-fr="Ils nous font <em>confiance.</em>" data-en="They <em>trust</em> us.">Ils nous font <em>confiance.</em></h2>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal-on-view">
+          <span class="quote-mark">"</span>
+          <div class="testi-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <p class="testi-text" data-fr="« LocolPro a transformé notre rentrée. En deux semaines, toute l'équipe pédagogique était autonome. Les parents nous remercient pour la clarté. »" data-en="&quot;LocolPro transformed our back-to-school. In two weeks the whole team was autonomous. Parents thank us for the clarity.&quot;">
+            « LocolPro a transformé notre rentrée. En deux semaines, toute l'équipe pédagogique était autonome. Les parents nous remercient pour la clarté. »
+          </p>
+          <div class="testi-author">
+            <span class="testi-av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&q=80&auto=format&fit=crop')"></span>
+            <div>
+              <div class="testi-name">Aïcha Mballa</div>
+              <div class="testi-role" data-fr="Directrice — Collège Horizon" data-en="Head of School — Collège Horizon">Directrice — Collège Horizon</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal-on-view delay-1">
+          <span class="quote-mark">"</span>
+          <div class="testi-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <p class="testi-text" data-fr="« La saisie des notes prend trois fois moins de temps. Et je peux suivre mes classes depuis mon téléphone, même hors connexion. »" data-en="&quot;Grade entry takes three times less time. And I can follow my classes from my phone, even offline.&quot;">
+            « La saisie des notes prend trois fois moins de temps. Et je peux suivre mes classes depuis mon téléphone, même hors connexion. »
+          </p>
+          <div class="testi-author">
+            <span class="testi-av" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop')"></span>
+            <div>
+              <div class="testi-name">Samuel Oyono</div>
+              <div class="testi-role" data-fr="Enseignant — Lycée Bilingue" data-en="Teacher — Lycée Bilingue">Enseignant — Lycée Bilingue</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal-on-view delay-2">
+          <span class="quote-mark">"</span>
+          <div class="testi-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <p class="testi-text" data-fr="« Je reçois une notification dès que mon fils est absent ou qu'une note est publiée. Je règle les frais en ligne en deux clics. »" data-en="&quot;I get a notification the moment my son is absent or a grade is posted. I pay fees online in two clicks.&quot;">
+            « Je reçois une notification dès que mon fils est absent ou qu'une note est publiée. Je règle les frais en ligne en deux clics. »
+          </p>
+          <div class="testi-author">
+            <span class="testi-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop')"></span>
+            <div>
+              <div class="testi-name">Grace Tchinda</div>
+              <div class="testi-role" data-fr="Parent d'élève" data-en="Parent">Parent d'élève</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta">
+    <span class="cta-deco d1"></span>
+    <span class="cta-deco d2"></span>
+    <div class="cta-inner reveal-on-view">
+      <span class="cta-badge"><span data-fr="✦ Démo gratuite · sans engagement" data-en="✦ Free demo · no commitment">✦ Démo gratuite · sans engagement</span></span>
+      <h2 class="cta-h" data-fr="Prêt à transformer la gestion de votre école ?" data-en="Ready to transform your school's management?">Prêt à transformer la gestion de votre école ?</h2>
+      <p class="cta-p" data-fr="Réservez une démonstration personnalisée de 30 minutes. Un membre de notre équipe vous rappelle sous 24 heures, dans la langue de votre choix." data-en="Book a personalized 30-minute demo. A team member calls you back within 24 hours, in the language of your choice.">
+        Réservez une démonstration personnalisée de 30 minutes. Un membre de notre équipe vous rappelle sous 24 heures, dans la langue de votre choix.
+      </p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary btn-xl" data-fr="Demander une démo" data-en="Request a demo">
+          Demander une démo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="fonctionnalites.html" class="btn btn-light btn-xl" data-fr="Explorer les fonctionnalités" data-en="Explore features">Explorer les fonctionnalités</a>
+      </div>
+      <p class="cta-note" data-fr="Aucune carte bancaire requise · Mise en service en 2 à 4 semaines" data-en="No credit card required · Live in 2 to 4 weeks">Aucune carte bancaire requise · Mise en service en 2 à 4 semaines</p>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro" data-fr="Gestion scolaire" data-en="School management">Gestion scolaire</span></span>
+        </a>
+        <p data-fr="LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">
+          LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.
+        </p>
+        <div class="social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.57-.14-2.88-.14C11.9 2 10 3.66 10 6.7v2.8H7v4h3V22h4z"/></svg></a>
+          <a href="https://wa.me/237600000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.9 1.6-.6 2.6.4 1.5 1.5 2.9 3.2 4 1.7 1.1 3 1.2 3.7 1 .5-.1 1.4-.7 1.6-1.3.2-.5.2-1 .1-1.1l-.4-.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Produit" data-en="Product">Produit</h4>
+        <ul>
+          <li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li>
+          <li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li>
+          <li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li>
+          <li><a href="#" data-fr="Se connecter" data-en="Log in">Se connecter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Entreprise" data-en="Company">Entreprise</h4>
+        <ul>
+          <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
+          <li><a href="#" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+          <li><a href="#" data-fr="Blog" data-en="Blog">Blog</a></li>
+          <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Ressources" data-en="Resources">Ressources</h4>
+        <ul>
+          <li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
+          <li><a href="#" data-fr="Centre d'aide" data-en="Help center">Centre d'aide</a></li>
+          <li><a href="#" data-fr="Guides" data-en="Guides">Guides</a></li>
+          <li><a href="#" data-fr="Statut" data-en="Status">Statut</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+        <ul>
+          <li><a href="tel:+237600000000">+237 6 00 00 00 00</a></li>
+          <li><a href="mailto:hello@locolpro.com">hello@locolpro.com</a></li>
+          <li><a href="https://wa.me/237600000000">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nexus Digital · LocolPro</span>
+      <div class="legal">
+        <a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+        <a href="#" data-fr="Conditions" data-en="Terms">Conditions</a>
+        <a href="#" data-fr="Mentions légales" data-en="Legal">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

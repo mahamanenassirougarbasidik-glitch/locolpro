@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fonctionnalités — LocolPro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <style>
+    /* Page-specific: feature module rows */
+    .page-hero {
+      position: relative;
+      background: var(--navy-deep);
+      color: white;
+      padding: 80px 0 90px;
+      overflow: hidden;
+      isolation: isolate;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: -2;
+      background-image: linear-gradient(180deg, rgba(10,26,55,0.85), rgba(10,26,55,0.96)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80&auto=format&fit=crop');
+      background-size: cover; background-position: center;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background-image: radial-gradient(circle at 70% 20%, rgba(58,170,92,0.2), transparent 45%);
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.05;
+      margin: 18px auto 18px; max-width: 16ch; text-wrap: balance;
+      animation: fadeUp 800ms var(--ease-out) 80ms both;
+    }
+    .page-hero h1 em { font-style: normal; background: linear-gradient(120deg,#5fd87a,#3aaa5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .page-hero .page-lead { font-size: 18px; color: rgba(255,255,255,0.78); max-width: 600px; margin: 0 auto; line-height: 1.6; animation: fadeUp 800ms var(--ease-out) 160ms both; }
+    .page-hero .eb { animation: fadeUp 700ms var(--ease-out) both; }
+
+    /* Anchor nav */
+    .anchor-nav { position: sticky; top: 72px; z-index: 40; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-200); }
+    .anchor-nav-inner { max-width: var(--container); margin: 0 auto; padding: 12px var(--gutter); display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+    .anchor-nav-inner::-webkit-scrollbar { display: none; }
+    .anchor-nav a { white-space: nowrap; font-size: 13px; font-weight: 600; color: var(--gray-600); padding: 7px 14px; border-radius: 999px; border: 1px solid var(--gray-200); transition: all 160ms; }
+    .anchor-nav a:hover { color: var(--navy); border-color: var(--navy); }
+
+    .module-row { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; padding: 80px 0; border-bottom: 1px solid var(--gray-100); scroll-margin-top: 130px; }
+    .module-row.reverse .module-text { order: 2; }
+    .module-row.reverse .module-visual { order: 1; }
+    .module-num { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--green-dark); letter-spacing: 0.1em; }
+    .module-row h2 { font-family: var(--font-display); font-size: clamp(26px,3vw,38px); font-weight: 800; color: var(--navy); letter-spacing: -0.025em; margin: 8px 0 14px; line-height: 1.1; }
+    .module-row .module-lead { font-size: 16.5px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; }
+    .module-feats { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .module-feats li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--gray-700); }
+    .module-feats li svg { flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; color: var(--green-dark); }
+    .module-icon { width: 56px; height: 56px; border-radius: 15px; background: var(--navy-pale); color: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .module-icon.green { background: var(--green-light); color: var(--green-dark); }
+    .module-icon svg { width: 28px; height: 28px; }
+
+    /* mock surfaces reuse hero-preview styles */
+    .mock { background: white; border: 1px solid var(--gray-200); border-radius: 16px; box-shadow: var(--shadow-lg); overflow: hidden; }
+    .mock-head { padding: 12px 18px; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; }
+    .mock-head .mt { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .mock-head .ms { font-size: 11px; color: var(--gray-400); }
+    .mock-body { padding: 20px; }
+
+    @media (max-width: 980px) {
+      .module-row { grid-template-columns: 1fr; gap: 36px; padding: 56px 0; }
+      .module-row.reverse .module-text { order: 1; }
+      .module-row.reverse .module-visual { order: 2; }
+    }
+  </style>
+</head>
+<body data-screen-label="Fonctionnalités">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro" data-fr="Gestion scolaire" data-en="School management">Gestion scolaire</span></span></a>
+      <nav class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="fonctionnalites.html" class="active" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+        <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+        <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+        <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+        <a href="#" class="btn btn-ghost" data-fr="Se connecter" data-en="Log in">Se connecter</a>
+        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <button class="nav-burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="fonctionnalites.html" class="active" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <div class="mm-cta"><a href="contact.html" class="btn btn-primary btn-lg" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eb eyebrow dark" style="display:inline-flex; align-items:center; gap:8px; background:rgba(58,170,92,0.16); border:1px solid rgba(58,170,92,0.4); border-radius:999px; padding:7px 16px; font-size:12.5px; color:#84e0a3; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;"><span data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</span></span>
+      <h1 data-fr="Tout pour gérer votre école, <em>au même endroit.</em>" data-en="Everything to run your school, <em>in one place.</em>">Tout pour gérer votre école, <em>au même endroit.</em></h1>
+      <p class="page-lead" data-fr="Huit modules conçus pour s'enchaîner naturellement. Tout est inclus dès le départ — pas d'options payantes, pas de plug-ins cachés." data-en="Eight modules built to flow together. Everything included from the start — no paid options, no hidden plug-ins.">
+        Huit modules conçus pour s'enchaîner naturellement. Tout est inclus dès le départ — pas d'options payantes, pas de plug-ins cachés.
+      </p>
+    </div>
+  </section>
+
+  <!-- ANCHOR NAV -->
+  <div class="anchor-nav">
+    <div class="anchor-nav-inner">
+      <a href="#eleves" data-fr="Élèves" data-en="Students">Élèves</a>
+      <a href="#enseignants" data-fr="Enseignants" data-en="Teachers">Enseignants</a>
+      <a href="#notes" data-fr="Notes & bulletins" data-en="Grades">Notes & bulletins</a>
+      <a href="#presences" data-fr="Présences" data-en="Attendance">Présences</a>
+      <a href="#frais" data-fr="Frais & paiements" data-en="Fees">Frais & paiements</a>
+      <a href="#communication" data-fr="Communication" data-en="Comms">Communication</a>
+      <a href="#dashboard" data-fr="Tableaux de bord" data-en="Dashboards">Tableaux de bord</a>
+      <a href="#securite" data-fr="Sécurité" data-en="Security">Sécurité</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- MODULE 1 — ELEVES -->
+    <section class="module-row" id="eleves">
+      <div class="module-text reveal-on-view">
+        <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+        <div class="module-num">MODULE 01</div>
+        <h2 data-fr="Gestion des élèves" data-en="Student management">Gestion des élèves</h2>
+        <p class="module-lead" data-fr="Un dossier complet pour chaque élève, du jour de l'inscription au dernier bulletin." data-en="A complete record for each student, from enrollment day to the final report.">Un dossier complet pour chaque élève, du jour de l'inscription au dernier bulletin.</p>
+        <ul class="module-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Dossiers élèves</strong> avec photo, état civil, contacts d'urgence" data-en="<strong>Student records</strong> with photo, civil status, emergency contacts"><strong>Dossiers élèves</strong> avec photo, état civil, contacts d'urgence</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Dossier scolaire complet</strong> : historique des classes et des notes" data-en="<strong>Full academic record</strong>: history of classes and grades"><strong>Dossier scolaire complet</strong> : historique des classes et des notes</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Affectation aux classes</strong> en masse ou individuelle" data-en="<strong>Class assignment</strong> in bulk or individually"><strong>Affectation aux classes</strong> en masse ou individuelle</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Suivi des notes</strong> par matière, avec progression visuelle" data-en="<strong>Grade tracking</strong> by subject, with visual progression"><strong>Suivi des notes</strong> par matière, avec progression visuelle</span></li>
+        </ul>
+      </div>
+      <div class="module-visual reveal-on-view delay-1">
+        <div class="mock">
+          <div class="mock-head"><span class="mt">/eleves/3eB/mariam-koffi</span><span class="badge g">Actif</span></div>
+          <div class="mock-body">
+            <div style="display:flex; gap:14px; align-items:center; padding-bottom:16px; border-bottom:1px solid var(--gray-100)">
+              <div style="width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#3aaa5c,#163565);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px">MK</div>
+              <div><div style="font-weight:800;color:var(--navy);font-size:17px">Mariam Koffi</div><div style="color:var(--gray-400);font-size:12.5px">3e B · nº 2024-0317</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
+              <div style="padding:12px;background:var(--gray-50);border-radius:10px"><div style="font-size:10px;color:var(--gray-400);font-weight:700;text-transform:uppercase">Moyenne</div><div style="font-weight:800;font-size:19px;color:var(--navy);margin-top:3px">15,4</div></div>
+              <div style="padding:12px;background:var(--green-light);border-radius:10px"><div style="font-size:10px;color:var(--green-dark);font-weight:700;text-transform:uppercase">Présence</div><div style="font-weight:800;font-size:19px;color:var(--green-dark);margin-top:3px">98%</div></div>
+              <div style="padding:12px;background:var(--gray-50);border-radius:10px"><div style="font-size:10px;color:var(--gray-400);font-weight:700;text-transform:uppercase">Rang</div><div style="font-weight:800;font-size:19px;color:var(--navy);margin-top:3px">3<span style="font-size:11px">/32</span></div></div>
+            </div>
+            <div style="margin-top:18px">
+              <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.05em">Matières · T2</div>
+              <div style="display:flex;flex-direction:column;gap:9px;font-size:13px">
+                <div style="display:flex;justify-content:space-between"><span>Mathématiques</span><span style="font-weight:700;color:var(--green-dark)">17,0</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Français</span><span style="font-weight:700;color:var(--green-dark)">15,5</span></div>
+                <div style="display:flex;justify-content:space-between"><span>English</span><span style="font-weight:700;color:var(--green-dark)">16,2</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Sciences</span><span style="font-weight:700;color:var(--navy)">13,8</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 2 — ENSEIGNANTS -->
+    <section class="module-row reverse" id="enseignants">
+      <div class="module-text reveal-on-view">
+        <div class="module-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M3 17h18M9 9l3 2-3 2"/></svg></div>
+        <div class="module-num">MODULE 02</div>
+        <h2 data-fr="Enseignants & personnel" data-en="Teachers & staff">Enseignants & personnel</h2>
+        <p class="module-lead" data-fr="Du recrutement à l'attribution des classes : chaque personne dispose des bons accès au bon moment." data-en="From hiring to class assignment: every person gets the right access at the right time.">Du recrutement à l'attribution des classes : chaque personne dispose des bons accès au bon moment.</p>
+        <ul class="module-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Profils enseignants et administratifs</strong> centralisés" data-en="<strong>Teacher and admin profiles</strong> centralized"><strong>Profils enseignants et administratifs</strong> centralisés</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Attribution des classes et matières</strong> en quelques clics" data-en="<strong>Class and subject assignment</strong> in a few clicks"><strong>Attribution des classes et matières</strong> en quelques clics</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Suivi pédagogique</strong> : évaluations et rapports trimestriels" data-en="<strong>Pedagogical follow-up</strong>: evaluations and term reports"><strong>Suivi pédagogique</strong> : évaluations et rapports trimestriels</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Accès sécurisé par rôle</strong> — chacun voit ce qui le concerne" data-en="<strong>Role-based secure access</strong> — everyone sees what concerns them"><strong>Accès sécurisé par rôle</strong> — chacun voit ce qui le concerne</span></li>
+        </ul>
+      </div>
+      <div class="module-visual reveal-on-view delay-1">
+        <div class="mock">
+          <div class="mock-head"><span class="mt" data-fr="Équipe pédagogique" data-en="Teaching team">Équipe pédagogique</span><span class="ms">42 membres</span></div>
+          <div class="mock-body" style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:12px;align-items:center;padding:11px;background:var(--gray-50);border-radius:10px"><div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px">JT</div><div style="flex:1"><div style="font-weight:700;color:var(--navy);font-size:13.5px">M. Jean Tchoumi</div><div style="font-size:11.5px;color:var(--gray-400)">Mathématiques · 4 classes</div></div><span class="badge g">Titulaire</span></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:11px;background:var(--gray-50);border-radius:10px"><div style="width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px">SO</div><div style="flex:1"><div style="font-weight:700;color:var(--navy);font-size:13.5px">Mme S. Oyono</div><div style="font-size:11.5px;color:var(--gray-400)">Français · 3 classes</div></div><span class="badge g">Titulaire</span></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:11px;background:var(--gray-50);border-radius:10px"><div style="width:36px;height:36px;border-radius:50%;background:var(--navy-light);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px">AB</div><div style="flex:1"><div style="font-weight:700;color:var(--navy);font-size:13.5px">M. A. Belibi</div><div style="font-size:11.5px;color:var(--gray-400)">English · 5 classes</div></div><span class="badge a">Vacataire</span></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:11px;background:var(--gray-50);border-radius:10px"><div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px">MN</div><div style="flex:1"><div style="font-weight:700;color:var(--navy);font-size:13.5px">Mme M. Ndongo</div><div style="font-size:11.5px;color:var(--gray-400)">SVT · 2 classes</div></div><span class="badge g">Titulaire</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 3 — NOTES -->
+    <section class="module-row" id="notes">
+      <div class="module-text reveal-on-view">
+        <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div>
+        <div class="module-num">MODULE 03</div>
+        <h2 data-fr="Notes, évaluations & bulletins" data-en="Grades & reports">Notes, évaluations & bulletins</h2>
+        <p class="module-lead" data-fr="De la saisie du jour J au bulletin imprimé : fluide pour les enseignants, visible pour les parents." data-en="From day-of entry to the printed report: smooth for teachers, visible for parents.">De la saisie du jour J au bulletin imprimé : fluide pour les enseignants, visible pour les parents.</p>
+        <ul class="module-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Saisie des notes</strong> rapide, validée par double saisie" data-en="<strong>Grade entry</strong>, fast, double-check validated"><strong>Saisie des notes</strong> rapide, validée par double saisie</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Calcul automatique</strong> des moyennes, rangs et mentions" data-en="<strong>Auto-calculation</strong> of averages, ranks and honours"><strong>Calcul automatique</strong> des moyennes, rangs et mentions</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Génération de bulletins</strong> aux normes, PDF ou imprimés" data-en="<strong>Standards-compliant reports</strong>, PDF or printed"><strong>Génération de bulletins</strong> aux normes, PDF ou imprimés</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Historique académique</strong> sur plusieurs années" data-en="<strong>Academic history</strong> across multiple years"><strong>Historique académique</strong> sur plusieurs années</span></li>
+        </ul>
+      </div>
+      <div class="module-visual reveal-on-view delay-1">
+        <div class="mock">
+          <div class="mock-head"><span class="mt" data-fr="Saisie · Maths 3e B" data-en="Entry · Maths 3rd B">Saisie · Maths 3e B</span><span class="badge g" data-fr="Devoir 2 · T2" data-en="Test 2 · T2">Devoir 2 · T2</span></div>
+          <div class="mock-body" style="padding:0">
+            <div style="display:grid;grid-template-columns:1.6fr 0.8fr 0.6fr;padding:9px 18px;background:var(--gray-50);font-size:10px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em"><span data-fr="Élève" data-en="Student">Élève</span><span style="text-align:right">Note/20</span><span style="text-align:right">Coef</span></div>
+            <div style="display:grid;grid-template-columns:1.6fr 0.8fr 0.6fr;padding:11px 18px;border-top:1px solid var(--gray-100);font-size:13px"><span style="font-weight:600;color:var(--navy)">Mariam Koffi</span><span style="text-align:right;font-weight:700;color:var(--green-dark)">17,0</span><span style="text-align:right;color:var(--gray-400)">2</span></div>
+            <div style="display:grid;grid-template-columns:1.6fr 0.8fr 0.6fr;padding:11px 18px;border-top:1px solid var(--gray-100);font-size:13px"><span style="font-weight:600;color:var(--navy)">Ousmane Diop</span><span style="text-align:right;font-weight:700;color:var(--green-dark)">14,5</span><span style="text-align:right;color:var(--gray-400)">2</span></div>
+            <div style="display:grid;grid-template-columns:1.6fr 0.8fr 0.6fr;padding:11px 18px;border-top:1px solid var(--gray-100);font-size:13px"><span style="font-weight:600;color:var(--navy)">Fatou Ndiaye</span><span style="text-align:right;font-weight:700;color:var(--green-dark)">18,0</span><span style="text-align:right;color:var(--gray-400)">2</span></div>
+            <div style="display:grid;grid-template-columns:1.6fr 0.8fr 0.6fr;padding:11px 18px;border-top:1px solid var(--gray-100);font-size:13px"><span style="font-weight:600;color:var(--navy)">Jean-Paul Abena</span><span style="text-align:right;font-weight:700;color:var(--navy)">11,5</span><span style="text-align:right;color:var(--gray-400)">2</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 18px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:12px"><span style="color:var(--gray-500)" data-fr="Moyenne classe" data-en="Class avg">Moyenne classe</span><span style="font-weight:800;color:var(--navy)">15,24 / 20</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 4 — PRESENCES -->
+    <section class="module-row reverse" id="presences">
+      <div class="module-text reveal-on-view">
+        <div class="module-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 13l2 2 4-4"/></svg></div>
+        <div class="module-num">MODULE 04</div>
+        <h2 data-fr="Présences & retards" data-en="Attendance">Présences & retards</h2>
+        <p class="module-lead" data-fr="L'appel devient une formalité de 30 secondes. Les parents sont prévenus instantanément." data-en="Roll call becomes a 30-second formality. Parents are notified instantly.">L'appel devient une formalité de 30 secondes. Les parents sont prévenus instantanément.</p>
+        <ul class="module-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Marquage rapide</strong> en grille tactile, sur tablette ou téléphone" data-en="<strong>Quick marking</strong> in a touch grid, on tablet or phone"><strong>Marquage rapide</strong> en grille tactile, sur tablette ou téléphone</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Suivi absences et retards</strong> par élève, classe et période" data-en="<strong>Absence &amp; lateness tracking</strong> by student, class, period"><strong>Suivi absences et retards</strong> par élève, classe et période</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Rapports automatiques</strong> hebdomadaires pour la direction" data-en="<strong>Automatic reports</strong>, weekly, for leadership"><strong>Rapports automatiques</strong> hebdomadaires pour la direction</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg><span data-fr="<strong>Alertes aux parents</strong> par SMS, e-mail ou WhatsApp" data-en="<strong>Parent alerts</strong> by SMS, email or WhatsApp"><strong>Alertes aux parents</strong> par SMS, e-mail ou WhatsApp</span></li>
+        </ul>
+      </div>
+      <div class="module-visual reveal-on-view delay-1">
+        <div class="mock">
+          <div class="mock-head"><span class="mt" data-fr="Appel · 6e A · 08h05" data-en="Roll · 6th A · 08:05">Appel · 6e A · 08h05</span><span class="badge g">28/30</span></div>
+          <div class="mock-body">
+            <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:7px" id="att-grid"></div>
+            <div style="display:flex;gap:16px;margin-top:14px;font-size:11px">
+              <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:var(--green);border-radius:3px"></span><span data-fr="Présent" data-en="Present">Présent</span></span>
+              <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:#dc2626;border-radius:3px"></span><span data-fr="Absent" data-en="Absent">Absent</span></span>
+              <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:#d97706;border-radius:3px"></span><span data-fr="Retard" data-en="Late">Retard</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODULES 5–8 — Bento cards -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal-on-view">
+        <span class="section-eyebrow navy"><span class="dot"></span><span data-fr="Et aussi" data-en="And also">Et aussi</span></span>
+        <h2 class="section-h" data-fr="Quatre modules <em>de plus.</em>" data-en="Four <em>more</em> modules.">Quatre modules <em>de plus.</em></h2>
+      </div>
+      <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+        <div class="feat-card reveal-on-view" id="frais">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 11h18M7 15h3"/></svg></div>
+          <h3 class="feat-h" data-fr="Frais scolaires & paiements" data-en="Fees & payments">Frais scolaires & paiements</h3>
+          <p class="feat-p" data-fr="Le module qui rassure le bureau comptable : vue d'ensemble, relances, comptabilité, exports." data-en="The module accounting loves: overview, follow-ups, accounting, exports.">Le module qui rassure le bureau comptable : vue d'ensemble, relances, comptabilité, exports.</p>
+          <ul class="feat-list">
+            <li data-fr="Paramétrage flexible (scolarité, transport, cantine)" data-en="Flexible setup (tuition, transport, canteen)">Paramétrage flexible (scolarité, transport, cantine)</li>
+            <li data-fr="Suivi des paiements et reçus numériques" data-en="Payment tracking and digital receipts">Suivi des paiements et reçus numériques</li>
+            <li data-fr="Gestion des impayés avec relances automatiques" data-en="Unpaid management with auto reminders">Gestion des impayés avec relances automatiques</li>
+            <li data-fr="Dépenses, bilan, comptabilité intégrée" data-en="Expenses, balance sheet, built-in accounting">Dépenses, bilan, comptabilité intégrée</li>
+          </ul>
+        </div>
+        <div class="feat-card reveal-on-view delay-1" id="communication">
+          <div class="feat-icon-wrap green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
+          <h3 class="feat-h" data-fr="Communication parents" data-en="Parent communication">Communication parents</h3>
+          <p class="feat-p" data-fr="Un canal direct, dans la langue de chaque famille. Les parents ne courent plus après l'information." data-en="A direct channel, in each family's language. Parents no longer chase information.">Un canal direct, dans la langue de chaque famille. Les parents ne courent plus après l'information.</p>
+          <ul class="feat-list">
+            <li data-fr="Notifications et annonces ciblées" data-en="Targeted notifications and announcements">Notifications et annonces ciblées</li>
+            <li data-fr="Messages à un parent, un groupe ou toute l'école" data-en="Messages to a parent, group or whole school">Messages à un parent, un groupe ou toute l'école</li>
+            <li data-fr="Rappels automatiques (paiements, événements)" data-en="Auto reminders (payments, events)">Rappels automatiques (paiements, événements)</li>
+            <li data-fr="Canal sécurisé école ↔ parents" data-en="Secure school ↔ parents channel">Canal sécurisé école ↔ parents</li>
+          </ul>
+        </div>
+        <div class="feat-card reveal-on-view" id="dashboard">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17v-4M12 17V8M17 17v-6"/></svg></div>
+          <h3 class="feat-h" data-fr="Tableaux de bord & rapports" data-en="Dashboards & reports">Tableaux de bord & rapports</h3>
+          <p class="feat-p" data-fr="Le pouls de l'école en une page : effectifs, paiements, présences, performance, en continu." data-en="Your school's pulse in one page: headcount, payments, attendance, performance, live.">Le pouls de l'école en une page : effectifs, paiements, présences, performance, en continu.</p>
+          <ul class="feat-list">
+            <li data-fr="Vue globale de l'école pour la direction" data-en="School-wide view for leadership">Vue globale de l'école pour la direction</li>
+            <li data-fr="Statistiques d'effectifs, paiements, résultats" data-en="Headcount, payments, results statistics">Statistiques d'effectifs, paiements, résultats</li>
+            <li data-fr="Filtres par classe, niveau, période" data-en="Filters by class, level, period">Filtres par classe, niveau, période</li>
+            <li data-fr="Exports PDF, Excel, partage sécurisé" data-en="PDF, Excel exports, secure sharing">Exports PDF, Excel, partage sécurisé</li>
+          </ul>
+        </div>
+        <div class="feat-card bento-dark reveal-on-view delay-1" id="securite">
+          <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 class="feat-h" data-fr="Sécurité & contrôle des accès" data-en="Security & access control">Sécurité & contrôle des accès</h3>
+          <p class="feat-p" data-fr="Une plateforme scolaire, c'est des données sensibles. LocolPro applique les bonnes pratiques d'un SaaS pro." data-en="A school platform means sensitive data. LocolPro applies pro-grade SaaS best practices.">Une plateforme scolaire, c'est des données sensibles. LocolPro applique les bonnes pratiques d'un SaaS pro.</p>
+          <ul class="feat-list">
+            <li data-fr="Rôles personnalisés (5 niveaux d'accès)" data-en="Custom roles (5 access levels)">Rôles personnalisés (5 niveaux d'accès)</li>
+            <li data-fr="Chiffrement TLS en transit, AES-256 au repos" data-en="TLS in transit, AES-256 at rest">Chiffrement TLS en transit, AES-256 au repos</li>
+            <li data-fr="Sauvegardes automatiques quotidiennes" data-en="Automatic daily backups">Sauvegardes automatiques quotidiennes</li>
+            <li data-fr="Authentification 2 facteurs, journal d'audit" data-en="Two-factor authentication, audit log">Authentification 2 facteurs, journal d'audit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <span class="cta-deco d1"></span><span class="cta-deco d2"></span>
+    <div class="cta-inner reveal-on-view">
+      <h2 class="cta-h" data-fr="Voir LocolPro en action ?" data-en="See LocolPro in action?">Voir LocolPro en action ?</h2>
+      <p class="cta-p" data-fr="Réservez une démonstration personnalisée. Nous adaptons la présentation à votre établissement." data-en="Book a personalized demo. We tailor the walkthrough to your school.">Réservez une démonstration personnalisée. Nous adaptons la présentation à votre établissement.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary btn-xl" data-fr="Demander une démo" data-en="Request a demo">Demander une démo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="plateforme.html" class="btn btn-light btn-xl" data-fr="Découvrir les profils" data-en="Discover roles">Découvrir les profils</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro">Gestion scolaire</span></span></a>
+        <p data-fr="LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
+      </div>
+      <div class="footer-col"><h4 data-fr="Produit" data-en="Product">Produit</h4><ul><li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li><li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li><li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Entreprise" data-en="Company">Entreprise</h4><ul><li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li><li><a href="#" data-fr="Carrières" data-en="Careers">Carrières</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Ressources" data-en="Resources">Ressources</h4><ul><li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li><li><a href="#" data-fr="Centre d'aide" data-en="Help center">Centre d'aide</a></li><li><a href="#" data-fr="Guides" data-en="Guides">Guides</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Contact" data-en="Contact">Contact</h4><ul><li><a href="tel:+237600000000">+237 6 00 00 00 00</a></li><li><a href="mailto:hello@locolpro.com">hello@locolpro.com</a></li><li><a href="https://wa.me/237600000000">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a><a href="#" data-fr="Conditions" data-en="Terms">Conditions</a></div></div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>
+    // build attendance grid
+    (function(){
+      const grid = document.getElementById('att-grid');
+      if(!grid) return;
+      const states = ['p','p','p','r','p','p','p','p','a','p','p','p','p','p','p','r','p','p'];
+      const map = { p:['var(--green-light)','var(--green-dark)','P'], a:['#fee2e2','#dc2626','A'], r:['#fef3c7','#d97706','R'] };
+      states.forEach(s=>{ const [bg,fg,l]=map[s]; const d=document.createElement('div'); d.style.cssText=`aspect-ratio:1;background:${bg};border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:${fg}`; d.textContent=l; grid.appendChild(d); });
+    })();
+  </script>
+</body>
+</html>

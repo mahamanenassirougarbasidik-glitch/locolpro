@@ -1,0 +1,641 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#163565;
+  --navy-dark:#0e2244;
+  --navy-light:#1e4a8a;
+  --green:#3aaa5c;
+  --green-dark:#2d8a49;
+  --green-light:#e8f7ee;
+  --green-pale:#f0faf4;
+  --navy-pale:#eef2f9;
+  --gray-50:#f8f9fc;
+  --gray-100:#f1f3f8;
+  --gray-200:#e2e8f0;
+  --gray-400:#94a3b8;
+  --gray-600:#475569;
+  --gray-800:#1e293b;
+  --white:#ffffff;
+  --text:#1e293b;
+  --text-muted:#64748b;
+}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white)}
+
+/* NAV */
+.nav{background:var(--white);border-bottom:1px solid var(--gray-200);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-icon svg{width:22px;height:22px}
+.logo-wordmark{display:flex;flex-direction:column;line-height:1}
+.logo-wordmark .locol{font-size:17px;font-weight:700;color:var(--navy);letter-spacing:-0.5px}
+.logo-wordmark .pro{font-size:11px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;color:var(--gray-600);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--navy)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.btn-lang{padding:6px 12px;border:1px solid var(--gray-200);border-radius:6px;font-size:12px;color:var(--gray-600);background:transparent;cursor:pointer;font-weight:500;display:flex;align-items:center;gap:4px}
+.btn-login{padding:8px 18px;border:1px solid var(--navy);border-radius:8px;font-size:13px;color:var(--navy);background:transparent;cursor:pointer;font-weight:500}
+.btn-demo-nav{padding:8px 18px;background:var(--green);border:none;border-radius:8px;font-size:13px;color:var(--white);cursor:pointer;font-weight:600}
+
+/* HERO */
+.hero{background:var(--navy);padding:80px 40px 0;overflow:hidden}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(58,170,92,0.2);border:1px solid rgba(58,170,92,0.4);border-radius:99px;padding:6px 14px;font-size:12px;color:#6ddc94;font-weight:600;letter-spacing:.3px;margin-bottom:24px}
+.hero-badge span{width:6px;height:6px;background:#3aaa5c;border-radius:50%;display:inline-block}
+.hero h1{font-size:44px;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero p{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:36px;max-width:480px}
+.hero-btns{display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap}
+.btn-hero-primary{padding:14px 28px;background:var(--green);border:none;border-radius:10px;font-size:15px;color:var(--white);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:8px}
+.btn-hero-secondary{padding:14px 28px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:10px;font-size:15px;color:var(--white);cursor:pointer;font-weight:500;display:flex;align-items:center;gap:8px}
+.hero-trust{display:flex;align-items:center;gap:16px}
+.trust-avatars{display:flex}
+.trust-av{width:32px;height:32px;border-radius:50%;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--white);margin-left:-8px}
+.trust-av:first-child{margin-left:0}
+.trust-text{font-size:12px;color:rgba(255,255,255,0.6)}
+.trust-text strong{color:var(--white)}
+
+/* APP PREVIEW */
+.hero-preview{background:var(--white);border-radius:16px 16px 0 0;overflow:hidden;border:1px solid var(--gray-200);border-bottom:none}
+.preview-bar{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:10px 16px;display:flex;align-items:center;gap:8px}
+.preview-dots{display:flex;gap:5px}
+.pd{width:10px;height:10px;border-radius:50%}
+.preview-url{flex:1;background:var(--white);border:1px solid var(--gray-200);border-radius:5px;padding:4px 10px;font-size:11px;color:var(--gray-400);margin:0 12px}
+.preview-body{display:grid;grid-template-columns:180px 1fr}
+.preview-sidebar{background:var(--navy);padding:16px 10px}
+.p-logo{display:flex;align-items:center;gap:6px;padding:6px 10px;margin-bottom:16px}
+.p-logo span{font-size:13px;font-weight:700;color:var(--white)}
+.p-logo em{color:var(--green);font-style:normal}
+.p-item{padding:8px 10px;border-radius:7px;font-size:11px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:8px;margin-bottom:2px;cursor:pointer}
+.p-item.act{background:rgba(58,170,92,0.2);color:var(--white);border-left:3px solid var(--green)}
+.p-item i{font-size:15px}
+.preview-main{background:var(--gray-50);padding:16px}
+.pm-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.pm-title{font-size:13px;font-weight:700;color:var(--navy)}
+.pm-date{font-size:11px;color:var(--gray-400)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.stat-c{background:var(--white);border-radius:8px;padding:10px 12px;border:1px solid var(--gray-200)}
+.stat-n{font-size:20px;font-weight:800;color:var(--navy)}
+.stat-n.green{color:var(--green)}
+.stat-n.amber{color:#f59e0b}
+.stat-l{font-size:9px;color:var(--gray-400);margin-top:2px;text-transform:uppercase;letter-spacing:.3px}
+.stat-trend{font-size:9px;color:var(--green);margin-top:3px;font-weight:600}
+.pm-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:8px}
+.pm-card{background:var(--white);border-radius:8px;border:1px solid var(--gray-200);overflow:hidden}
+.pm-card-head{padding:8px 12px;border-bottom:1px solid var(--gray-100);font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.4px}
+.pm-row{display:grid;grid-template-columns:1.5fr .7fr .7fr;padding:6px 12px;border-top:1px solid var(--gray-100);font-size:10px;color:var(--gray-600);align-items:center}
+.pm-row:first-of-type{border-top:none}
+.badge{padding:2px 7px;border-radius:99px;font-size:9px;font-weight:600}
+.badge.g{background:#dcfce7;color:#15803d}
+.badge.a{background:#fef9c3;color:#a16207}
+.badge.r{background:#fee2e2;color:#dc2626}
+.mini-chart{padding:10px 12px}
+.chart-bar-wrap{display:flex;align-items:flex-end;gap:4px;height:60px}
+.cb{flex:1;border-radius:3px 3px 0 0;min-width:10px}
+.chart-labels{display:flex;gap:4px;margin-top:4px}
+.cl{flex:1;font-size:8px;color:var(--gray-400);text-align:center}
+
+/* BANDS & LOGOS */
+.trust-band{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:20px 40px}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:40px}
+.trust-label-band{font-size:11px;color:var(--gray-400);font-weight:600;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.school-logos{display:flex;align-items:center;gap:28px;flex:1}
+.school-pill{background:var(--white);border:1px solid var(--gray-200);border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap}
+
+/* STATS STRIP */
+.stats-strip{background:var(--navy);padding:48px 40px}
+.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.sg-num{font-size:40px;font-weight:800;color:var(--white);letter-spacing:-1px}
+.sg-num span{color:var(--green)}
+.sg-lbl{font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px}
+.sg-divider{width:1px;background:rgba(255,255,255,0.1);margin:auto}
+
+/* FEATURES */
+.feat-section{padding:88px 40px;background:var(--white)}
+.section-eyebrow{font-size:12px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;text-align:center;margin-bottom:12px}
+.section-h{font-size:36px;font-weight:800;color:var(--navy);text-align:center;line-height:1.2;margin-bottom:14px;letter-spacing:-0.5px}
+.section-sub{font-size:16px;color:var(--text-muted);text-align:center;max-width:560px;margin:0 auto 56px;line-height:1.7}
+.feat-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat-card{border:1px solid var(--gray-200);border-radius:16px;padding:28px;background:var(--white);transition:border-color .2s}
+.feat-card:hover{border-color:var(--navy)}
+.feat-icon-wrap{width:48px;height:48px;border-radius:12px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.feat-icon-wrap i{font-size:24px;color:var(--navy)}
+.feat-icon-wrap.green-ic{background:var(--green-light)}
+.feat-icon-wrap.green-ic i{color:var(--green-dark)}
+.feat-h{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.feat-p{font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:14px}
+.feat-list{display:flex;flex-direction:column;gap:7px}
+.feat-list li{font-size:12px;color:var(--gray-600);display:flex;align-items:flex-start;gap:8px;list-style:none}
+.feat-list li::before{content:'';width:16px;height:16px;background:var(--green-light);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%232d8a49' d='M3 8l3.5 3.5L13 5'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat}
+
+/* ROLES SECTION */
+.roles-section{background:var(--gray-50);padding:88px 40px;border-top:1px solid var(--gray-200)}
+.roles-wrap{max-width:1100px;margin:0 auto}
+.roles-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:0}
+.role-card{background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:28px 20px;text-align:center;cursor:pointer}
+.role-card:hover{border-color:var(--navy)}
+.role-av{width:56px;height:56px;border-radius:16px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.role-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.role-desc{font-size:11px;color:var(--text-muted);line-height:1.5}
+.role-perms{margin-top:14px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.perm-tag{background:var(--navy-pale);color:var(--navy);font-size:9px;padding:3px 8px;border-radius:99px;font-weight:600}
+
+/* TESTIMONIALS */
+.testi-section{background:var(--white);padding:88px 40px;border-top:1px solid var(--gray-200)}
+.testi-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{border:1px solid var(--gray-200);border-radius:16px;padding:28px;background:var(--white)}
+.testi-stars{display:flex;gap:2px;margin-bottom:14px}
+.testi-stars i{font-size:14px;color:#f59e0b}
+.testi-text{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:18px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-av{width:38px;height:38px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--white)}
+.testi-name{font-size:13px;font-weight:700;color:var(--navy)}
+.testi-role{font-size:11px;color:var(--text-muted)}
+
+/* FAQ PREVIEW */
+.faq-section{background:var(--gray-50);padding:88px 40px;border-top:1px solid var(--gray-200)}
+.faq-wrap{max-width:720px;margin:0 auto}
+.faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;padding:20px 24px;margin-bottom:10px}
+.faq-q{font-size:14px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.faq-a{font-size:13px;color:var(--text-muted);margin-top:12px;line-height:1.7;border-top:1px solid var(--gray-100);padding-top:12px}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:96px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-deco{position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(58,170,92,0.15);top:-100px;right:-80px}
+.cta-deco2{position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);bottom:-60px;left:60px}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(58,170,92,0.15);border:1px solid rgba(58,170,92,0.3);border-radius:99px;padding:6px 16px;font-size:12px;color:var(--green);font-weight:600;margin-bottom:28px}
+.cta-h{font-size:38px;font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-0.5px}
+.cta-p{font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:36px;line-height:1.7}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cta-green{padding:15px 32px;background:var(--green);border:none;border-radius:10px;font-size:15px;color:var(--white);cursor:pointer;font-weight:700}
+.btn-cta-outline{padding:15px 32px;background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:10px;font-size:15px;color:var(--white);cursor:pointer;font-weight:500}
+.cta-note{font-size:12px;color:rgba(255,255,255,0.4);margin-top:20px}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--gray-50);border-top:1px solid var(--gray-200);padding:48px 40px}
+.contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.contact-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.contact-icon{width:44px;height:44px;border-radius:12px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center}
+.contact-icon i{font-size:20px;color:var(--navy)}
+.contact-label{font-size:12px;font-weight:700;color:var(--navy)}
+.contact-val{font-size:12px;color:var(--text-muted)}
+
+/* FOOTER */
+.footer{background:var(--navy-dark);padding:56px 40px 28px}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.45);margin-top:14px;line-height:1.7;max-width:240px}
+.footer-col h4{font-size:12px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:10px}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom span{font-size:12px;color:rgba(255,255,255,0.3)}
+.footer-lang{display:flex;gap:8px}
+.f-lang-btn{background:rgba(255,255,255,0.08);border:none;border-radius:5px;padding:5px 10px;font-size:11px;color:rgba(255,255,255,0.5);cursor:pointer}
+.f-lang-btn.act{background:rgba(58,170,92,0.2);color:var(--green)}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav{padding:0 20px}
+  .hero{padding:48px 20px 0}
+  .hero-inner{grid-template-columns:1fr;gap:36px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:14px}
+  .hero-preview{display:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .feat-grid{grid-template-columns:1fr;gap:16px}
+  .feat-section,.roles-section,.testi-section,.faq-section,.cta-section{padding:56px 20px}
+  .roles-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .footer{padding:40px 20px 20px}
+  .trust-band{padding:16px 20px}
+  .school-logos{gap:12px;flex-wrap:wrap}
+  .stats-strip{padding:36px 20px}
+  .sg-num{font-size:28px}
+  .cta-h{font-size:26px}
+}
+</style>
+
+<h2 class="sr-only">Maquette complète du site LocolPro — plateforme de gestion scolaire</h2>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2C6.58 2 3 5.58 3 10v2a8 8 0 0016 0v-2c0-4.42-3.58-8-8-8z" fill="rgba(255,255,255,0.15)"/>
+        <path d="M8 7h3a3.5 3.5 0 010 7H8V7z" fill="white"/>
+        <path d="M8 10h4" stroke="white" stroke-width="1.5"/>
+        <path d="M8 7v7" stroke="white" stroke-width="1.5"/>
+        <path d="M14 4l1.5-2" stroke="#3aaa5c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 3c0 0 1-1.5 3.5-.5" stroke="#3aaa5c" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-wordmark">
+      <span class="locol">Locol</span>
+      <span class="pro">Pro</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#">Fonctionnalités</a>
+    <a href="#">La plateforme</a>
+    <a href="#">À propos</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-lang"><i class="ti ti-world" aria-hidden="true"></i> FR</button>
+    <button class="btn-login">Se connecter</button>
+    <button class="btn-demo-nav">Demander une démo</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> Nouveau · Plateforme 2025</div>
+      <h1>La gestion scolaire <em>nouvelle génération</em></h1>
+      <p>LocolPro centralise tout : élèves, enseignants, notes, présences, paiements et communication parents — en un seul endroit.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary"><i class="ti ti-rocket" aria-hidden="true"></i> Demander une démo gratuite</button>
+        <button class="btn-hero-secondary"><i class="ti ti-player-play" aria-hidden="true"></i> Voir la vidéo</button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="trust-av" style="background:#2d7dd2">SA</div>
+          <div class="trust-av" style="background:#3aaa5c">MB</div>
+          <div class="trust-av" style="background:#e07b39">FK</div>
+          <div class="trust-av" style="background:#7c3aed">AO</div>
+        </div>
+        <div class="trust-text"><strong>500+ établissements</strong> nous font confiance</div>
+      </div>
+    </div>
+    <div class="hero-preview">
+      <div class="preview-bar">
+        <div class="preview-dots">
+          <div class="pd" style="background:#f87171"></div>
+          <div class="pd" style="background:#fbbf24"></div>
+          <div class="pd" style="background:#4ade80"></div>
+        </div>
+        <div class="preview-url">app.locolpro.com/dashboard</div>
+      </div>
+      <div class="preview-body">
+        <div class="preview-sidebar">
+          <div class="p-logo"><span>Locol<em>Pro</em></span></div>
+          <div class="p-item act"><i class="ti ti-layout-dashboard" aria-hidden="true"></i> Dashboard</div>
+          <div class="p-item"><i class="ti ti-users" aria-hidden="true"></i> Élèves</div>
+          <div class="p-item"><i class="ti ti-notebook" aria-hidden="true"></i> Notes</div>
+          <div class="p-item"><i class="ti ti-calendar-check" aria-hidden="true"></i> Présences</div>
+          <div class="p-item"><i class="ti ti-coin" aria-hidden="true"></i> Paiements</div>
+          <div class="p-item"><i class="ti ti-message-2" aria-hidden="true"></i> Messages</div>
+          <div class="p-item"><i class="ti ti-chart-bar" aria-hidden="true"></i> Rapports</div>
+          <div class="p-item"><i class="ti ti-settings" aria-hidden="true"></i> Paramètres</div>
+        </div>
+        <div class="preview-main">
+          <div class="pm-header">
+            <div class="pm-title">Tableau de bord</div>
+            <div class="pm-date">Mai 2025 · Trimestre 2</div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-c"><div class="stat-n">1 248</div><div class="stat-l">Élèves</div><div class="stat-trend">+4.2%</div></div>
+            <div class="stat-c"><div class="stat-n green">94%</div><div class="stat-l">Présence</div><div class="stat-trend">+1.1%</div></div>
+            <div class="stat-c"><div class="stat-n amber">12</div><div class="stat-l">Impayés</div></div>
+            <div class="stat-c"><div class="stat-n">67</div><div class="stat-l">Enseignants</div></div>
+          </div>
+          <div class="pm-grid">
+            <div class="pm-card">
+              <div class="pm-card-head">Élèves récents</div>
+              <div class="pm-row" style="font-weight:700;font-size:9px;color:#94a3b8"><span>Nom</span><span>Moyenne</span><span>Statut</span></div>
+              <div class="pm-row"><span>Fatima Diallo</span><span>16.4</span><span><span class="badge g">Validé</span></span></div>
+              <div class="pm-row"><span>Moussa Amadou</span><span>13.1</span><span><span class="badge g">Validé</span></span></div>
+              <div class="pm-row"><span>Aïcha Boubacar</span><span>9.8</span><span><span class="badge a">À suivre</span></span></div>
+              <div class="pm-row"><span>Ibrahim Maïga</span><span>17.2</span><span><span class="badge g">Validé</span></span></div>
+            </div>
+            <div class="pm-card">
+              <div class="pm-card-head">Présences / semaine</div>
+              <div class="mini-chart">
+                <div class="chart-bar-wrap">
+                  <div class="cb" style="height:72%;background:#163565"></div>
+                  <div class="cb" style="height:85%;background:#163565"></div>
+                  <div class="cb" style="height:90%;background:#3aaa5c"></div>
+                  <div class="cb" style="height:78%;background:#163565"></div>
+                  <div class="cb" style="height:95%;background:#3aaa5c"></div>
+                </div>
+                <div class="chart-labels">
+                  <div class="cl">Lun</div><div class="cl">Mar</div><div class="cl">Mer</div><div class="cl">Jeu</div><div class="cl">Ven</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-label-band">Ils nous font confiance</div>
+    <div class="school-logos">
+      <div class="school-pill">Lycée Excellence</div>
+      <div class="school-pill">École Horizon</div>
+      <div class="school-pill">Collège Avenir</div>
+      <div class="school-pill">Institut Al-Farabi</div>
+      <div class="school-pill">Groupe Scolaire Étoile</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div>
+      <div class="sg-num">500<span>+</span></div>
+      <div class="sg-lbl">Établissements actifs</div>
+    </div>
+    <div>
+      <div class="sg-num">120<span>k+</span></div>
+      <div class="sg-lbl">Élèves gérés</div>
+    </div>
+    <div>
+      <div class="sg-num">99.9<span>%</span></div>
+      <div class="sg-lbl">Disponibilité garantie</div>
+    </div>
+    <div>
+      <div class="sg-num">2<span> pays</span></div>
+      <div class="sg-lbl">Déploiement actif</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="feat-section">
+  <div class="section-eyebrow">Fonctionnalités</div>
+  <div class="section-h">Tout ce dont votre école a besoin</div>
+  <div class="section-sub">Notre plateforme accompagne votre établissement avec des outils modernes, fiables et adaptés à chaque niveau d'enseignement.</div>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon-wrap"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="feat-h">Gestion des élèves</div>
+      <div class="feat-p">Dossiers complets, affectation aux classes et suivi individuel de chaque élève.</div>
+      <ul class="feat-list">
+        <li>Création et mise à jour des dossiers</li>
+        <li>Dossier scolaire complet</li>
+        <li>Affectation aux classes et groupes</li>
+        <li>Suivi individuel des notes</li>
+      </ul>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-wrap"><i class="ti ti-chalkboard" aria-hidden="true"></i></div>
+      <div class="feat-h">Enseignants & personnel</div>
+      <div class="feat-p">Profils, attribution des matières et accès sécurisé selon les rôles.</div>
+      <ul class="feat-list">
+        <li>Profils enseignants et administratifs</li>
+        <li>Attribution des classes et matières</li>
+        <li>Suivi des activités pédagogiques</li>
+        <li>Accès sécurisé selon les rôles</li>
+      </ul>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-wrap green-ic"><i class="ti ti-clipboard-check" aria-hidden="true"></i></div>
+      <div class="feat-h">Notes, évaluations & bulletins</div>
+      <div class="feat-p">Saisie des notes, calcul automatique des moyennes et génération de bulletins.</div>
+      <ul class="feat-list">
+        <li>Saisie des notes par matière</li>
+        <li>Calcul automatique des moyennes</li>
+        <li>Génération de bulletins</li>
+        <li>Historique académique sécurisé</li>
+      </ul>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-wrap green-ic"><i class="ti ti-calendar-stats" aria-hidden="true"></i></div>
+      <div class="feat-h">Présences & retards</div>
+      <div class="feat-p">Marquage rapide, suivi des absences et alertes automatiques aux parents.</div>
+      <ul class="feat-list">
+        <li>Marquage rapide des présences</li>
+        <li>Rapports automatiques par classe</li>
+        <li>Alertes aux parents</li>
+      </ul>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-wrap"><i class="ti ti-coin" aria-hidden="true"></i></div>
+      <div class="feat-h">Frais scolaires & paiements</div>
+      <div class="feat-p">Configuration des frais, suivi en temps réel et bilan comptable intégré.</div>
+      <ul class="feat-list">
+        <li>Suivi des paiements en temps réel</li>
+        <li>Gestion des impayés</li>
+        <li>Suivi des dépenses</li>
+        <li>Bilan et comptabilité</li>
+      </ul>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-wrap"><i class="ti ti-message-2" aria-hidden="true"></i></div>
+      <div class="feat-h">Communication parents</div>
+      <div class="feat-p">Canal unique école–parents avec annonces ciblées et rappels automatiques.</div>
+      <ul class="feat-list">
+        <li>Messages ciblés par classe ou élève</li>
+        <li>Rappels automatiques</li>
+        <li>Canal unique école ↔ parents</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="roles-section">
+  <div class="roles-wrap">
+    <div class="section-eyebrow">Découvrez la plateforme</div>
+    <div class="section-h">Un accès adapté à chaque profil</div>
+    <div class="section-sub">Chaque utilisateur dispose d'une interface et de permissions pensées pour son rôle.</div>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-av" style="background:#eef2f9"><i class="ti ti-shield-star" style="font-size:28px;color:#163565" aria-hidden="true"></i></div>
+        <div class="role-name">Super Admin</div>
+        <div class="role-desc">Contrôle total de la plateforme</div>
+        <div class="role-perms"><span class="perm-tag">Tout accès</span><span class="perm-tag">Configuration</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-av" style="background:#eef2f9"><i class="ti ti-building-school" style="font-size:28px;color:#163565" aria-hidden="true"></i></div>
+        <div class="role-name">Administrateur</div>
+        <div class="role-desc">Gestion complète de l'école</div>
+        <div class="role-perms"><span class="perm-tag">Élèves</span><span class="perm-tag">Personnel</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-av" style="background:#e8f7ee"><i class="ti ti-coin" style="font-size:28px;color:#2d8a49" aria-hidden="true"></i></div>
+        <div class="role-name">Intendant</div>
+        <div class="role-desc">Finance et paiements</div>
+        <div class="role-perms"><span class="perm-tag">Frais</span><span class="perm-tag">Comptabilité</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-av" style="background:#eef2f9"><i class="ti ti-chalkboard" style="font-size:28px;color:#163565" aria-hidden="true"></i></div>
+        <div class="role-name">Enseignant</div>
+        <div class="role-desc">Notes et présences par classe</div>
+        <div class="role-perms"><span class="perm-tag">Notes</span><span class="perm-tag">Présences</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-av" style="background:#e8f7ee"><i class="ti ti-heart" style="font-size:28px;color:#2d8a49" aria-hidden="true"></i></div>
+        <div class="role-name">Parent</div>
+        <div class="role-desc">Suivi en temps réel de l'élève</div>
+        <div class="role-perms"><span class="perm-tag">Bulletins</span><span class="perm-tag">Messages</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="section-eyebrow">Témoignages</div>
+  <div class="section-h">Ce que disent nos clients</div>
+  <div class="section-sub">Des directeurs d'établissements qui ont transformé leur gestion avec LocolPro.</div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+      <div class="testi-text">"Depuis que nous utilisons LocolPro, la gestion des notes et des bulletins prend 3x moins de temps. Nos enseignants sont ravis."</div>
+      <div class="testi-author">
+        <div class="testi-av">MD</div>
+        <div><div class="testi-name">Mamadou Diallo</div><div class="testi-role">Directeur, Lycée Excellence</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+      <div class="testi-text">"Les parents reçoivent maintenant les absences en temps réel. La communication école-famille n'a jamais été aussi fluide."</div>
+      <div class="testi-author">
+        <div class="testi-av" style="background:#2d8a49">FK</div>
+        <div><div class="testi-name">Fatima Kouyaté</div><div class="testi-role">Directrice, École Horizon</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
+      <div class="testi-text">"Le suivi des impayés est désormais automatique. Nous avons réduit nos impayés de 40% en deux trimestres."</div>
+      <div class="testi-author">
+        <div class="testi-av" style="background:#7c3aed">AO</div>
+        <div><div class="testi-name">Abdou Oumarou</div><div class="testi-role">Intendant, Collège Avenir</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-eyebrow">FAQ</div>
+  <div class="section-h">Questions fréquentes</div>
+  <div class="section-sub" style="margin-bottom:40px">Tout ce que vous devez savoir avant de commencer.</div>
+  <div class="faq-wrap">
+    <div class="faq-item">
+      <div class="faq-q">Combien de temps prend l'installation de LocolPro ? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+      <div class="faq-a">L'installation est rapide : votre école peut être opérationnelle en moins de 48h. Notre équipe vous accompagne à chaque étape, de la configuration à la formation de vos équipes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">LocolPro fonctionne-t-il sur mobile ? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+      <div class="faq-a">Oui, LocolPro est entièrement responsive et fonctionne sur tous les appareils : ordinateur, tablette et smartphone. Les parents peuvent suivre leurs enfants directement depuis leur téléphone.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Mes données sont-elles sécurisées ? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+      <div class="faq-a">La sécurité est notre priorité. Vos données sont hébergées en HTTPS, avec des sauvegardes automatiques quotidiennes, un contrôle d'accès par rôle et une protection avancée des données personnelles.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Y a-t-il une version d'essai gratuite ? <i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+      <div class="faq-a">Oui, nous proposons une démo gratuite et personnalisée. Remplissez le formulaire de contact et notre équipe vous contacte sous 24h pour organiser une présentation adaptée à votre établissement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-deco"></div>
+  <div class="cta-deco2"></div>
+  <div class="cta-inner">
+    <div class="cta-badge"><i class="ti ti-rocket" aria-hidden="true"></i> Gratuit · Sans engagement</div>
+    <div class="cta-h">Prêt à moderniser votre école ?</div>
+    <div class="cta-p">Rejoignez plus de 500 établissements qui ont transformé leur gestion scolaire avec LocolPro. Demandez votre démo personnalisée aujourd'hui.</div>
+    <div class="cta-btns">
+      <button class="btn-cta-green">Demander une démo gratuite</button>
+      <button class="btn-cta-outline">Nous contacter</button>
+    </div>
+    <div class="cta-note">Réponse garantie sous 24h · Aucune carte bancaire requise</div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-phone" aria-hidden="true"></i></div>
+      <div class="contact-label">Téléphone</div>
+      <div class="contact-val">+227 XX XX XX XX</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+      <div class="contact-label">Email</div>
+      <div class="contact-val">contact@locolpro.com</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon" style="background:#e8f7ee"><i class="ti ti-brand-whatsapp" style="color:#2d8a49" aria-hidden="true"></i></div>
+      <div class="contact-label">WhatsApp</div>
+      <div class="contact-val">Discussion instantanée</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+      <div class="contact-label">Adresse</div>
+      <div class="contact-val">Niamey, Niger</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="gap:10px;display:flex;align-items:center">
+        <div class="logo-icon">
+          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 7h3a3.5 3.5 0 010 7H8V7z" fill="white"/>
+            <path d="M8 10h4" stroke="white" stroke-width="1.5"/>
+            <path d="M8 7v7" stroke="white" stroke-width="1.5"/>
+            <path d="M14 4l1.5-2" stroke="#3aaa5c" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M11 3c0 0 1-1.5 3.5-.5" stroke="#3aaa5c" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-wordmark">
+          <span class="locol" style="color:#fff">Locol</span>
+          <span class="pro">Pro</span>
+        </div>
+      </div>
+      <p>Une solution numérique complète pour la gestion des établissements scolaires africains, développée par Nexus Digital.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <a href="#">Fonctionnalités</a>
+      <a href="#">La plateforme</a>
+      <a href="#">Sécurité</a>
+      <a href="#">Nouveautés</a>
+    </div>
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="#">À propos</a>
+      <a href="#">Nexus Digital</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Documentation</a>
+      <a href="#">Conditions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 LocolPro · Nexus Digital. Tous droits réservés.</span>
+    <div class="footer-lang">
+      <button class="f-lang-btn act">Français</button>
+      <button class="f-lang-btn">English</button>
+    </div>
+  </div>
+</footer>
