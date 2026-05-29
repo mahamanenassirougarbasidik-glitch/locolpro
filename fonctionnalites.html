@@ -69,6 +69,16 @@
       .module-row.reverse .module-text { order: 1; }
       .module-row.reverse .module-visual { order: 2; }
     }
+    @media (max-width: 720px) {
+      .anchor-nav { top: 60px; }
+      .page-hero { padding: 60px 0 70px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero { padding: 50px 0 60px; }
+      .module-row { padding: 40px 0; gap: 28px; }
+      .module-row h2 { margin-bottom: 10px; }
+      .module-row .module-lead { margin-bottom: 18px; }
+    }
   </style>
 </head>
 <body data-screen-label="Fonctionnalités">
@@ -264,7 +274,7 @@
         <span class="section-eyebrow navy"><span class="dot"></span><span data-fr="Et aussi" data-en="And also">Et aussi</span></span>
         <h2 class="section-h" data-fr="Quatre modules <em>de plus.</em>" data-en="Four <em>more</em> modules.">Quatre modules <em>de plus.</em></h2>
       </div>
-      <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+      <div class="feat-grid">
         <div class="feat-card reveal-on-view" id="frais">
           <div class="feat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 11h18M7 15h3"/></svg></div>
           <h3 class="feat-h" data-fr="Frais scolaires & paiements" data-en="Fees & payments">Frais scolaires & paiements</h3>
