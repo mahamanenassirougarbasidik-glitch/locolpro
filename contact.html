@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Demander une démo · LocolPro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <style>
+    .contact-hero { background: var(--navy-deep); color: white; position: relative; overflow: hidden; isolation:isolate; }
+    .contact-hero::before { content:''; position:absolute; inset:0; z-index:-2; background-image: linear-gradient(120deg,rgba(10,26,55,0.94),rgba(10,26,55,0.82)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1920&q=80&auto=format&fit=crop'); background-size:cover; background-position:center; }
+    .contact-hero::after { content:''; position:absolute; inset:0; z-index:-1; background-image: radial-gradient(circle at 85% 25%, rgba(58,170,92,0.22), transparent 45%); }
+    .contact-split { display:grid; grid-template-columns: 0.95fr 1.05fr; gap:0; align-items:stretch; min-height: 100%; }
+    .contact-left { padding: 80px 60px 80px 0; }
+    .contact-left .eb { display:inline-flex; align-items:center; gap:8px; background:rgba(58,170,92,0.16); border:1px solid rgba(58,170,92,0.4); border-radius:999px; padding:7px 16px; font-size:12.5px; color:#84e0a3; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; animation: fadeUp 700ms var(--ease-out) both; }
+    .contact-left h1 { font-family:var(--font-display); font-size:clamp(32px,4.5vw,52px); font-weight:800; color:white; letter-spacing:-0.03em; line-height:1.05; margin:18px 0; text-wrap:balance; animation: fadeUp 800ms var(--ease-out) 80ms both; }
+    .contact-left h1 em { font-style:normal; background:linear-gradient(120deg,#5fd87a,#3aaa5c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .contact-left .lead { font-size:17px; color:rgba(255,255,255,0.78); line-height:1.6; margin-bottom:34px; animation: fadeUp 800ms var(--ease-out) 160ms both; }
+    .contact-channels { display:flex; flex-direction:column; gap:12px; animation: fadeUp 800ms var(--ease-out) 240ms both; }
+    .channel { display:flex; gap:14px; align-items:center; padding:16px 18px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; transition: all 200ms; }
+    .channel:hover { background:rgba(255,255,255,0.1); border-color:rgba(95,216,122,0.4); transform:translateX(4px); }
+    .channel .ci { width:44px;height:44px;border-radius:12px;background:rgba(58,170,92,0.18);color:#84e0a3;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .channel .ci svg { width:22px;height:22px; }
+    .channel .cl { font-size:11.5px;color:rgba(255,255,255,0.55);font-weight:600;text-transform:uppercase;letter-spacing:0.05em; }
+    .channel .cv { font-size:15px;font-weight:700;color:white;margin-top:2px; }
+
+    .contact-form-wrap { background:white; border-radius:24px; box-shadow:var(--shadow-xl); padding:42px; margin:60px 0 60px 0; align-self:center; }
+    .contact-form-wrap h2 { font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .contact-form-wrap .fp { font-size:14px; color:var(--text-muted); margin-bottom:26px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .field { display:flex; flex-direction:column; gap:7px; }
+    .field.full { grid-column:span 2; }
+    .field label { font-size:12.5px; font-weight:700; color:var(--navy); }
+    .field input, .field select, .field textarea { font-family:inherit; font-size:14.5px; padding:12px 14px; border:1px solid var(--gray-200); background:white; border-radius:10px; color:var(--text); transition: border-color 160ms, box-shadow 160ms; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--navy); box-shadow:0 0 0 4px var(--navy-pale); }
+    .field textarea { min-height:110px; resize:vertical; line-height:1.5; }
+    .form-check { grid-column:span 2; display:flex; gap:10px; align-items:flex-start; font-size:12.5px; color:var(--text-muted); }
+    .form-check input { margin-top:3px; accent-color:var(--green); }
+    .form-check a { color:var(--navy); text-decoration:underline; }
+    .form-confirm { display:none; flex-direction:column; align-items:center; text-align:center; padding:40px 20px; background:var(--green-light); border-radius:16px; }
+    .form-confirm .cc { width:64px;height:64px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+    .form-confirm .cc svg { width:32px;height:32px; }
+    .form-confirm h3 { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--navy); }
+    .form-confirm p { font-size:14.5px; color:var(--gray-600); margin-top:8px; }
+
+    @media (max-width:980px){
+      .contact-split { grid-template-columns:1fr; }
+      .contact-left { padding:60px 0 20px; }
+      .contact-form-wrap { margin:0 0 60px; }
+    }
+    @media (max-width:560px){
+      .form-grid { grid-template-columns:1fr; }
+      .field.full, .form-check { grid-column:auto; }
+      .contact-form-wrap { padding:28px; }
+    }
+  </style>
+</head>
+<body data-screen-label="Contact">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro" data-fr="Gestion scolaire" data-en="School management">Gestion scolaire</span></span></a>
+      <nav class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+        <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+        <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+        <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        <a href="contact.html" class="active" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+        <a href="#" class="btn btn-ghost" data-fr="Se connecter" data-en="Log in">Se connecter</a>
+        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <button class="nav-burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contact.html" class="active" data-fr="Contact" data-en="Contact">Contact</a>
+    <div class="mm-cta"><a href="contact.html" class="btn btn-primary btn-lg" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></div>
+  </div>
+
+  <section class="contact-hero">
+    <div class="wrap">
+      <div class="contact-split">
+        <div class="contact-left">
+          <span class="eb"><span data-fr="Demander une démo" data-en="Request a demo">Demander une démo</span></span>
+          <h1 data-fr="Parlons de votre <em>établissement.</em>" data-en="Let's talk about your <em>school.</em>">Parlons de votre <em>établissement.</em></h1>
+          <p class="lead" data-fr="Remplissez le formulaire ou contactez-nous directement. Un membre de l'équipe revient vers vous sous 24 heures, dans la langue de votre choix." data-en="Fill out the form or reach us directly. A team member gets back to you within 24 hours, in your language.">
+            Remplissez le formulaire ou contactez-nous directement. Un membre de l'équipe revient vers vous sous 24 heures, dans la langue de votre choix.
+          </p>
+          <div class="contact-channels">
+            <a href="tel:+237600000000" class="channel"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h2l2 5-2 1c1 3 3 5 6 6l1-2 5 2v2a2 2 0 0 1-2 2A16 16 0 0 1 3 5z"/></svg></span><div><div class="cl" data-fr="Téléphone" data-en="Phone">Téléphone</div><div class="cv">+237 6 00 00 00 00</div></div></a>
+            <a href="mailto:hello@locolpro.com" class="channel"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><div class="cl" data-fr="E-mail" data-en="Email">E-mail</div><div class="cv">hello@locolpro.com</div></div></a>
+            <a href="https://wa.me/237600000000" class="channel"><span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.9 1.6-.6 2.6.4 1.5 1.5 2.9 3.2 4 1.7 1.1 3 1.2 3.7 1 .5-.1 1.4-.7 1.6-1.3.2-.5.2-1 .1-1.1l-.4-.2z"/></svg></span><div><div class="cl">WhatsApp</div><div class="cv">+237 6 00 00 00 00</div></div></a>
+            <div class="channel"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><div class="cl" data-fr="Horaires" data-en="Hours">Horaires</div><div class="cv" data-fr="Lun · Sam · 8h — 19h (WAT)" data-en="Mon · Sat · 8am — 7pm (WAT)">Lun · Sam · 8h — 19h (WAT)</div></div></div>
+          </div>
+        </div>
+
+        <form class="contact-form-wrap" onsubmit="event.preventDefault(); this.querySelector('.form-grid').style.display='none'; this.querySelector('.form-confirm').style.display='flex';">
+          <h2 data-fr="Formulaire de démo" data-en="Demo form">Formulaire de démo</h2>
+          <p class="fp" data-fr="Quelques informations pour préparer votre démonstration." data-en="A few details to prepare your demo.">Quelques informations pour préparer votre démonstration.</p>
+          <div class="form-grid">
+            <div class="field"><label data-fr="Prénom" data-en="First name">Prénom</label><input type="text" required data-attr="placeholder" data-fr="Aïcha" data-en="Aïcha" placeholder="Aïcha" /></div>
+            <div class="field"><label data-fr="Nom" data-en="Last name">Nom</label><input type="text" required data-attr="placeholder" data-fr="Mballa" data-en="Mballa" placeholder="Mballa" /></div>
+            <div class="field full"><label data-fr="Nom de l'établissement" data-en="School name">Nom de l'établissement</label><input type="text" required data-attr="placeholder" data-fr="Collège Horizon" data-en="Horizon School" placeholder="Collège Horizon" /></div>
+            <div class="field"><label data-fr="Votre rôle" data-en="Your role">Votre rôle</label><select required><option value="" data-fr="Sélectionnez…" data-en="Select…">Sélectionnez…</option><option data-fr="Direction" data-en="Head of school">Direction</option><option data-fr="Administration" data-en="Administration">Administration</option><option data-fr="Intendance" data-en="Bursar">Intendance</option><option data-fr="Enseignant·e" data-en="Teacher">Enseignant·e</option><option data-fr="Autre" data-en="Other">Autre</option></select></div>
+            <div class="field"><label data-fr="Nombre d'élèves" data-en="Number of students">Nombre d'élèves</label><select required><option value="" data-fr="Sélectionnez…" data-en="Select…">Sélectionnez…</option><option>&lt; 100</option><option>100 — 300</option><option>300 — 700</option><option>700 — 1500</option><option>&gt; 1500</option></select></div>
+            <div class="field"><label data-fr="E-mail" data-en="Email">E-mail</label><input type="email" required data-attr="placeholder" data-fr="vous@exemple.com" data-en="you@example.com" placeholder="vous@exemple.com" /></div>
+            <div class="field"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input type="tel" required placeholder="+237 6 00 00 00 00" /></div>
+            <div class="field full"><label data-fr="Votre message (optionnel)" data-en="Your message (optional)">Votre message (optionnel)</label><textarea data-attr="placeholder" data-fr="Parlez-nous de votre établissement et de vos besoins…" data-en="Tell us about your school and needs…" placeholder="Parlez-nous de votre établissement et de vos besoins…"></textarea></div>
+            <label class="form-check"><input type="checkbox" required /><span data-fr="J'accepte que LocolPro utilise mes données pour me recontacter. <a href='#'>Confidentialité</a>." data-en="I agree LocolPro may use my data to follow up. <a href='#'>Privacy</a>.">J'accepte que LocolPro utilise mes données pour me recontacter. <a href="#">Confidentialité</a>.</span></label>
+            <button type="submit" class="btn btn-primary btn-lg" style="grid-column:span 2;justify-content:center" data-fr="Demander ma démo" data-en="Request my demo">Demander ma démo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="form-confirm">
+            <span class="cc"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span>
+            <h3 data-fr="Demande envoyée !" data-en="Request sent!">Demande envoyée !</h3>
+            <p data-fr="Un membre de l'équipe LocolPro vous recontacte sous 24 heures." data-en="A LocolPro team member will be in touch within 24 hours.">Un membre de l'équipe LocolPro vous recontacte sous 24 heures.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ pointer -->
+  <section class="section alt">
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:white;border:1px solid var(--gray-200);border-radius:18px;padding:32px 38px">
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--navy)" data-fr="Une question avant le formulaire ?" data-en="A question before the form?">Une question avant le formulaire ?</h3>
+          <p style="font-size:15px;color:var(--text-muted);margin-top:6px" data-fr="La FAQ couvre la sécurité, les tarifs, la démo et le démarrage." data-en="The FAQ covers security, pricing, demo and onboarding.">La FAQ couvre la sécurité, les tarifs, la démo et le démarrage.</p>
+        </div>
+        <a href="faq.html" class="btn btn-ghost btn-lg" data-fr="Voir la FAQ" data-en="See the FAQ">Voir la FAQ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro">Gestion scolaire</span></span></a>
+        <p data-fr="LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
+      </div>
+      <div class="footer-col"><h4 data-fr="Produit" data-en="Product">Produit</h4><ul><li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li><li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li><li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Entreprise" data-en="Company">Entreprise</h4><ul><li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li><li><a href="#" data-fr="Carrières" data-en="Careers">Carrières</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Ressources" data-en="Resources">Ressources</h4><ul><li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li><li><a href="#" data-fr="Centre d'aide" data-en="Help center">Centre d'aide</a></li><li><a href="#" data-fr="Guides" data-en="Guides">Guides</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Contact" data-en="Contact">Contact</h4><ul><li><a href="tel:+237600000000">+237 6 00 00 00 00</a></li><li><a href="mailto:hello@locolpro.com">hello@locolpro.com</a></li><li><a href="https://wa.me/237600000000">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a><a href="#" data-fr="Conditions" data-en="Terms">Conditions</a></div></div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

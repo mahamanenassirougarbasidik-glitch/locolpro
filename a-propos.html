@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>À propos — Nexus Digital · LocolPro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <style>
+    .page-hero { position: relative; background: var(--navy-deep); color: white; padding: 80px 0 90px; overflow: hidden; isolation: isolate; }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:-2; background-image: linear-gradient(120deg,rgba(10,26,55,0.92),rgba(10,26,55,0.8)), url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1920&q=80&auto=format&fit=crop'); background-size:cover; background-position:center; }
+    .page-hero::after { content:''; position:absolute; inset:0; z-index:-1; background-image: radial-gradient(circle at 80% 30%, rgba(58,170,92,0.2), transparent 45%); }
+    .page-hero .inner { max-width: 760px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(34px,5vw,58px); font-weight:800; color:white; letter-spacing:-0.03em; line-height:1.05; margin:18px 0; text-wrap:balance; animation: fadeUp 800ms var(--ease-out) 80ms both; }
+    .page-hero h1 em { font-style:normal; background:linear-gradient(120deg,#5fd87a,#3aaa5c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .page-hero .page-lead { font-size:18px; color:rgba(255,255,255,0.78); line-height:1.6; animation: fadeUp 800ms var(--ease-out) 160ms both; }
+    .page-hero .eb { display:inline-flex; align-items:center; gap:8px; background:rgba(58,170,92,0.16); border:1px solid rgba(58,170,92,0.4); border-radius:999px; padding:7px 16px; font-size:12.5px; color:#84e0a3; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; animation: fadeUp 700ms var(--ease-out) both; }
+
+    .mvv-card { background:white; border:1px solid var(--gray-200); border-radius:20px; padding:34px; transition: all 280ms var(--ease-out); }
+    .mvv-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--navy); }
+    .mvv-card .ic { width:56px; height:56px; border-radius:15px; background:var(--navy-pale); color:var(--navy); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+    .mvv-card .ic.green { background:var(--green-light); color:var(--green-dark); }
+    .mvv-card .ic svg { width:28px; height:28px; }
+    .mvv-card h3 { font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--navy); margin-bottom:10px; }
+    .mvv-card p { font-size:14.5px; color:var(--text-muted); line-height:1.65; }
+
+    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
+    .value-item .num { font-family:var(--mono); font-size:13px; color:var(--gray-400); font-weight:700; }
+    .value-item h4 { font-family:var(--font-display); font-size:19px; font-weight:800; color:var(--navy); margin:8px 0; }
+    .value-item p { font-size:14px; color:var(--text-muted); line-height:1.6; }
+    @media (max-width:900px){ .values-grid{grid-template-columns:1fr 1fr;} }
+    @media (max-width:560px){ .values-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body data-screen-label="À propos">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro" data-fr="Gestion scolaire" data-en="School management">Gestion scolaire</span></span></a>
+      <nav class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+        <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+        <a href="a-propos.html" class="active" data-fr="À propos" data-en="About">À propos</a>
+        <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+        <a href="#" class="btn btn-ghost" data-fr="Se connecter" data-en="Log in">Se connecter</a>
+        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <button class="nav-burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+    <a href="a-propos.html" class="active" data-fr="À propos" data-en="About">À propos</a>
+    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <div class="mm-cta"><a href="contact.html" class="btn btn-primary btn-lg" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></div>
+  </div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="inner">
+        <span class="eb"><span data-fr="Nexus Digital" data-en="Nexus Digital">Nexus Digital</span></span>
+        <h1 data-fr="Bâtir l'école numérique, <em>avec ceux qui la font.</em>" data-en="Building the digital school, <em>with those who run it.</em>">Bâtir l'école numérique, <em>avec ceux qui la font.</em></h1>
+        <p class="page-lead" data-fr="Nexus Digital est l'éditeur de LocolPro. Une équipe locale, qui parle français et anglais, qui visite les écoles, et qui construit des outils que ses utilisateurs aiment vraiment ouvrir." data-en="Nexus Digital is the publisher of LocolPro. A local team, French- and English-speaking, that visits schools and builds tools its users actually love to open.">
+          Nexus Digital est l'éditeur de LocolPro. Une équipe locale, qui parle français et anglais, qui visite les écoles, et qui construit des outils que ses utilisateurs aiment vraiment ouvrir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / VISION / ENGAGEMENT -->
+  <section class="section">
+    <div class="wrap">
+      <div class="feat-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="mvv-card reveal-on-view">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
+          <h3 data-fr="Notre mission" data-en="Our mission">Notre mission</h3>
+          <p data-fr="Donner à chaque école — peu importe sa taille — les outils numériques d'une école d'excellence. Sans complexité, sans coût caché, sans dépendance technique." data-en="Give every school — whatever its size — the digital tools of a school of excellence. No complexity, no hidden cost, no technical lock-in.">Donner à chaque école — peu importe sa taille — les outils numériques d'une école d'excellence. Sans complexité, sans coût caché, sans dépendance technique.</p>
+        </div>
+        <div class="mvv-card reveal-on-view delay-1">
+          <div class="ic green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3 data-fr="Notre vision" data-en="Our vision">Notre vision</h3>
+          <p data-fr="Une éducation pilotée par la donnée, où les chefs d'établissement, les enseignants et les familles partagent une même réalité, en temps réel, dans leur langue." data-en="Education driven by data, where heads of school, teachers and families share one reality, in real time, in their language.">Une éducation pilotée par la donnée, où les chefs d'établissement, les enseignants et les familles partagent une même réalité, en temps réel, dans leur langue.</p>
+        </div>
+        <div class="mvv-card reveal-on-view delay-2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19c0-3 4-5 8-5s8 2 8 5"/><circle cx="12" cy="8" r="4"/></svg></div>
+          <h3 data-fr="Notre engagement" data-en="Our commitment">Notre engagement</h3>
+          <p data-fr="Une équipe joignable, des écoles visitées, des écoutes terrain qui font évoluer le produit. Vos retours façonnent LocolPro, à chaque trimestre." data-en="A reachable team, visited schools, field listening that shapes the product. Your feedback shapes LocolPro every term.">Une équipe joignable, des écoles visitées, des écoutes terrain qui font évoluer le produit. Vos retours façonnent LocolPro, à chaque trimestre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY + STATS -->
+  <section class="section dark" style="position:relative;overflow:hidden">
+    <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(58,170,92,0.12)"></div>
+    <div class="wrap" style="position:relative">
+      <div class="photo-split">
+        <div class="reveal-on-view">
+          <span class="section-eyebrow" style="background:rgba(58,170,92,0.16);color:#84e0a3"><span class="dot" style="background:#5fd87a"></span><span data-fr="Notre histoire" data-en="Our story">Notre histoire</span></span>
+          <h2 class="section-h" style="color:white" data-fr="Nous avons grandi <em>dans les salles des profs.</em>" data-en="We grew up <em>in teachers' lounges.</em>">Nous avons grandi <em>dans les salles des profs.</em></h2>
+          <p class="section-sub" data-fr="Nexus Digital est né d'une frustration partagée par des enseignants, des parents et des chefs d'établissement : trop d'outils, trop de paperasse, et toujours le même décalage entre l'école et les familles." data-en="Nexus Digital was born from a shared frustration: too many tools, too much paperwork, and the same gap between school and family.">
+            Nexus Digital est né d'une frustration partagée par des enseignants, des parents et des chefs d'établissement : trop d'outils, trop de paperasse, et toujours le même décalage entre l'école et les familles.
+          </p>
+          <p class="section-sub" style="margin-top:14px" data-fr="Nous avons passé deux ans à co-construire LocolPro avec des établissements pilotes. Chaque écran a été testé en vrai, dans des écoles vraies, avec leurs vraies contraintes." data-en="We spent two years co-building LocolPro with pilot schools. Every screen was tested for real, in real schools, with real constraints.">
+            Nous avons passé deux ans à co-construire LocolPro avec des établissements pilotes. Chaque écran a été testé en vrai, dans des écoles vraies, avec leurs vraies contraintes.
+          </p>
+        </div>
+        <div class="reveal-on-view delay-1" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:26px"><div style="font-family:var(--font-display);font-size:42px;font-weight:800;color:white;letter-spacing:-0.03em">2 ans</div><div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px" data-fr="de co-construction" data-en="of co-building">de co-construction</div></div>
+          <div style="background:rgba(58,170,92,0.15);border:1px solid rgba(95,216,122,0.3);border-radius:18px;padding:26px"><div style="font-family:var(--font-display);font-size:42px;font-weight:800;color:#5fd87a;letter-spacing:-0.03em"><span data-count="40" data-suffix="+">0</span></div><div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px" data-fr="écoles pilotes" data-en="pilot schools">écoles pilotes</div></div>
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:26px"><div style="font-family:var(--font-display);font-size:42px;font-weight:800;color:white;letter-spacing:-0.03em">8</div><div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px" data-fr="modules pensés ensemble" data-en="modules built together">modules pensés ensemble</div></div>
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:26px"><div style="font-family:var(--font-display);font-size:42px;font-weight:800;color:white;letter-spacing:-0.03em">FR·EN</div><div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px" data-fr="bilingue dès le jour 1" data-en="bilingual from day 1">bilingue dès le jour 1</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal-on-view" style="text-align:left;margin:0 0 50px;max-width:640px">
+        <span class="section-eyebrow navy"><span class="dot"></span><span data-fr="Nos valeurs" data-en="Our values">Nos valeurs</span></span>
+        <h2 class="section-h" data-fr="Quatre principes qui guident <em>chaque décision.</em>" data-en="Four principles guiding <em>every decision.</em>">Quatre principes qui guident <em>chaque décision.</em></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-item reveal-on-view"><div class="num">01</div><h4 data-fr="Proximité" data-en="Proximity">Proximité</h4><p data-fr="Vos écoles sont nos voisines. Nous venons sur place, nous écoutons en personne." data-en="Your schools are our neighbours. We come on-site, we listen in person.">Vos écoles sont nos voisines. Nous venons sur place, nous écoutons en personne.</p></div>
+        <div class="value-item reveal-on-view delay-1"><div class="num">02</div><h4 data-fr="Simplicité" data-en="Simplicity">Simplicité</h4><p data-fr="Une feature de moins est souvent plus utile qu'une de plus. Nous taillons l'essentiel." data-en="One feature less is often more useful than one more. We sharpen what matters.">Une feature de moins est souvent plus utile qu'une de plus. Nous taillons l'essentiel.</p></div>
+        <div class="value-item reveal-on-view delay-2"><div class="num">03</div><h4 data-fr="Sécurité" data-en="Security">Sécurité</h4><p data-fr="Les données scolaires sont sensibles. Chiffrement, audits, sauvegardes — non négociables." data-en="School data is sensitive. Encryption, audits, backups — non-negotiable.">Les données scolaires sont sensibles. Chiffrement, audits, sauvegardes — non négociables.</p></div>
+        <div class="value-item reveal-on-view delay-3"><div class="num">04</div><h4 data-fr="Souveraineté" data-en="Sovereignty">Souveraineté</h4><p data-fr="Vos données restent vos données, hébergées localement, exportables à tout moment." data-en="Your data stays yours, locally hosted, exportable any time.">Vos données restent vos données, hébergées localement, exportables à tout moment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <span class="cta-deco d1"></span><span class="cta-deco d2"></span>
+    <div class="cta-inner reveal-on-view">
+      <h2 class="cta-h" data-fr="Discutons de votre école." data-en="Let's talk about your school.">Discutons de votre école.</h2>
+      <p class="cta-p" data-fr="Une démo, une question, un échange : nous sommes disponibles, dans votre langue." data-en="A demo, a question, a chat: we're here, in your language.">Une démo, une question, un échange : nous sommes disponibles, dans votre langue.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary btn-xl" data-fr="Nous contacter" data-en="Contact us">Nous contacter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="fonctionnalites.html" class="btn btn-light btn-xl" data-fr="Découvrir le produit" data-en="See the product">Découvrir le produit</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5L12 4l8 5.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#3aaa5c" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="logo-wordmark"><span class="locol">LocolPro</span><span class="pro">Gestion scolaire</span></span></a>
+        <p data-fr="LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">LocolPro est édité par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
+      </div>
+      <div class="footer-col"><h4 data-fr="Produit" data-en="Product">Produit</h4><ul><li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li><li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li><li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Entreprise" data-en="Company">Entreprise</h4><ul><li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li><li><a href="#" data-fr="Carrières" data-en="Careers">Carrières</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Ressources" data-en="Resources">Ressources</h4><ul><li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li><li><a href="#" data-fr="Centre d'aide" data-en="Help center">Centre d'aide</a></li><li><a href="#" data-fr="Guides" data-en="Guides">Guides</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Contact" data-en="Contact">Contact</h4><ul><li><a href="tel:+237600000000">+237 6 00 00 00 00</a></li><li><a href="mailto:hello@locolpro.com">hello@locolpro.com</a></li><li><a href="https://wa.me/237600000000">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a><a href="#" data-fr="Conditions" data-en="Terms">Conditions</a></div></div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
