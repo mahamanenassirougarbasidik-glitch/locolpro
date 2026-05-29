@@ -268,7 +268,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   inset: 0;
   background-image:
     linear-gradient(180deg, rgba(10, 26, 55, 0.7) 0%, rgba(10, 26, 55, 0.92) 60%, var(--navy-deep) 100%),
-    url('https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1920&q=80&auto=format&fit=crop');
+    url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80&auto=format&fit=crop');
   background-size: cover;
   background-position: center calc(30% + var(--parallax, 0px));
   z-index: -2;
@@ -1108,7 +1108,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   z-index: -2;
   background-image:
     linear-gradient(135deg, rgba(10, 26, 55, 0.92) 0%, rgba(22, 53, 101, 0.88) 50%, rgba(30, 74, 138, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1920&q=80&auto=format&fit=crop');
+    url('https://images.unsplash.com/photo-1547516994-e413ae1c70ea?w=1920&q=80&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
 }
