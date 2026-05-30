@@ -116,7 +116,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 
 .nav-logo { display: flex; align-items: center; gap: 12px; }
 .nav-logo-img {
-  height: 48px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1318,8 +1318,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .section { padding: 56px 0; }
   .section-head { margin-bottom: 36px; }
   .section-sub { font-size: 15.5px; }
-  .nav-inner { height: 60px; }
-  .nav-logo-img { height: 38px; }
+  .nav-inner { height: 64px; }
+  .nav-logo-img { height: 52px; }
   .nav-right .lang-toggle { display: none; }
   .hero { padding-top: 44px; }
   .hero h1 { font-size: 32px; }
@@ -1398,7 +1398,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .btn-lg { padding: 11px 16px; font-size: 13.5px; }
   .hero-badge { font-size: 11px; padding: 6px 12px; }
   .section-eyebrow { font-size: 11px; padding: 4px 12px; }
-  .nav-logo-img { height: 34px; }
+  .nav-logo-img { height: 46px; }
 }
 
 /* ---- Global overflow guard ---- */
