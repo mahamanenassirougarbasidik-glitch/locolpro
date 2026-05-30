@@ -180,7 +180,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 .nav-right { display: flex; align-items: center; gap: 10px; }
 
 .lang-toggle {
-  display: inline-flex;
+  display: none !important;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
   border-radius: 999px;
