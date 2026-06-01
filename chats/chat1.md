@@ -453,7 +453,7 @@ J'ai entièrement refait le site avec un design beaucoup plus ambitieux, inspir�
 **Animations professionnelles**
 - Hero : titre, sous-titre et boutons qui apparaissent en cascade ; mockup d'app qui flotte doucement ; badge « pulse » animé
 - Révélations au scroll sur toutes les sections (fade + montée)
-- Compteurs animés (40+, 38 000+, 70 %, 99,9 %)
+- Compteurs animés (10+, 38 000+, 70 %, 99,9 %)
 - Marquee défilant des écoles partenaires
 - Cartes avec micro-interactions au survol (icônes qui pivotent, élévation)
 - Cercles décoratifs en rotation lente sur les sections CTA
