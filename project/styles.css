@@ -1016,8 +1016,27 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   border: 2px solid white;
   box-shadow: 0 0 0 1px var(--gray-200);
 }
+.testi-badge {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #3aaa5c, #5fd87a);
+  color: white; font-weight: 700; font-size: 14px;
+  border: 2px solid white; box-shadow: 0 0 0 1px var(--gray-200);
+  flex-shrink: 0;
+}
 .testi-name { font-size: 14px; font-weight: 700; color: var(--navy); }
 .testi-role { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+@media (max-width:900px){
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-card { padding: 22px; }
+}
+
+/* Professional micro-animations */
+.testi-card { transition: transform 360ms var(--ease-out), box-shadow 360ms var(--ease-out); }
+.testi-badge { transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out); }
+.testi-card:hover .testi-badge { transform: translateY(-4px) scale(1.04); box-shadow: var(--shadow); }
 
 /* ============================================================
    FAQ
