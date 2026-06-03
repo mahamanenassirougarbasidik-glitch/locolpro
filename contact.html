@@ -44,15 +44,36 @@
     .form-confirm h3 { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--navy); }
     .form-confirm p { font-size:14.5px; color:var(--gray-600); margin-top:8px; }
 
+    .contact-faq-tip { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; background:white; border:1px solid var(--gray-200); border-radius:18px; padding:32px 38px; }
+
     @media (max-width:980px){
       .contact-split { grid-template-columns:1fr; }
       .contact-left { padding:60px 0 20px; }
       .contact-form-wrap { margin:0 0 60px; }
     }
+    @media (max-width:720px){
+      .contact-left { padding:40px 0 16px; }
+      .contact-form-wrap { padding:32px; border-radius:18px; }
+      .contact-channels { gap:10px; }
+      .channel { padding:14px 16px; }
+    }
     @media (max-width:560px){
       .form-grid { grid-template-columns:1fr; }
       .field.full, .form-check { grid-column:auto; }
-      .contact-form-wrap { padding:28px; }
+      .contact-form-wrap { padding:24px 20px; border-radius:14px; margin:0 0 40px; }
+      #form-btn { grid-column:auto !important; width:100%; }
+      .contact-faq-tip { padding:24px 20px; flex-direction:column; align-items:flex-start; gap:14px; border-radius:14px; }
+      .contact-faq-tip .btn { width:100%; justify-content:center; }
+    }
+    @media (max-width:420px){
+      .contact-left { padding:28px 0 12px; }
+      .contact-form-wrap { padding:18px 16px; border-radius:12px; }
+      .contact-form-wrap h2 { font-size:20px; }
+      .channel { padding:12px 12px; gap:10px; }
+      .channel .ci { width:36px; height:36px; border-radius:10px; }
+      .channel .ci svg { width:18px; height:18px; }
+      .channel .cv { font-size:14px; }
+      .field input, .field select, .field textarea { font-size:14px; padding:11px 12px; }
     }
   </style>
 </head>
@@ -118,7 +139,7 @@
             <div class="field"><label data-fr="Téléphone" data-en="Phone">Téléphone</label><input name="telephone" type="tel" required placeholder="+227 70 17 07 17" /></div>
             <div class="field full"><label data-fr="Votre message (optionnel)" data-en="Your message (optional)">Votre message (optionnel)</label><textarea name="message" data-attr="placeholder" data-fr="Parlez-nous de votre établissement et de vos besoins…" data-en="Tell us about your school and needs…" placeholder="Parlez-nous de votre établissement et de vos besoins…"></textarea></div>
             <label class="form-check"><input type="checkbox" required /><span data-fr="J'accepte que LocolPro utilise mes données pour me recontacter. <a href='#'>Confidentialité</a>." data-en="I agree LocolPro may use my data to follow up. <a href='#'>Privacy</a>.">J'accepte que LocolPro utilise mes données pour me recontacter. <a href="#">Confidentialité</a>.</span></label>
-            <button type="submit" id="form-btn" class="btn btn-primary btn-lg" style="grid-column:span 2;justify-content:center" data-fr="Demander ma démo" data-en="Request my demo">Demander ma démo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="submit" id="form-btn" class="btn btn-primary btn-lg" style="grid-column:span 2;width:100%;justify-content:center" data-fr="Demander ma démo" data-en="Request my demo">Demander ma démo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
           <div class="form-confirm" id="form-confirm">
             <span class="cc"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span>
@@ -133,7 +154,7 @@
   <!-- FAQ pointer -->
   <section class="section alt">
     <div class="wrap">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:white;border:1px solid var(--gray-200);border-radius:18px;padding:32px 38px">
+      <div class="contact-faq-tip">
         <div>
           <h3 style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--navy)" data-fr="Une question avant le formulaire ?" data-en="A question before the form?">Une question avant le formulaire ?</h3>
           <p style="font-size:15px;color:var(--text-muted);margin-top:6px" data-fr="La FAQ couvre la sécurité, les tarifs, la démo et le démarrage." data-en="The FAQ covers security, pricing, demo and onboarding.">La FAQ couvre la sécurité, les tarifs, la démo et le démarrage.</p>
