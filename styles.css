@@ -1279,6 +1279,85 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 .footer-bottom .legal a:hover { color: white; }
 
 /* ============================================================
+   ANIMATIONS ENHANCED — hover, zoom, shimmer, press
+   ============================================================ */
+
+/* Image zoom — photo split */
+.photo-split-img img {
+  transition: transform 700ms var(--ease-out);
+}
+.photo-split-img:hover img {
+  transform: scale(1.05);
+}
+
+/* Image zoom — bento large card background */
+.feat-card.bento-lg .feat-illust {
+  transition: transform 700ms var(--ease-out), background-size 700ms var(--ease-out);
+}
+.feat-card:hover .feat-illust {
+  transform: scale(1.06);
+}
+
+/* Button shimmer on hover — btn-primary */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transition: left 550ms var(--ease-out);
+  pointer-events: none;
+}
+.btn-primary:hover::before {
+  left: 140%;
+}
+
+/* Button press feedback */
+.btn:active {
+  transform: scale(0.96) !important;
+  transition-duration: 60ms !important;
+}
+
+/* Advantage icon bounce on hover */
+.advantage-item .ic {
+  transition: transform 280ms var(--ease-spring), box-shadow 280ms;
+}
+.advantage-item:hover .ic {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 8px 20px rgba(22, 53, 101, 0.18);
+}
+
+/* Stats number scale on hover */
+.sg-num {
+  display: block;
+  transition: transform 260ms var(--ease-spring);
+}
+.stats-grid > div:hover .sg-num {
+  transform: scale(1.07);
+}
+
+/* Testi badge pop on card hover */
+.testi-card:hover .testi-badge {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Feat-card link — underline arrow on hover */
+a.feat-card .feat-p { transition: color 200ms; }
+a.feat-card:hover .feat-p { color: var(--navy); }
+
+/* Smooth entrance for hero badge */
+@keyframes badgePop {
+  0% { opacity: 0; transform: scale(0.85) translateY(8px); }
+  60% { transform: scale(1.04) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.hero-badge { animation: badgePop 600ms var(--ease-spring) both; }
+
+/* ============================================================
    REVEAL ANIMATIONS (scroll-triggered)
    ============================================================ */
 
