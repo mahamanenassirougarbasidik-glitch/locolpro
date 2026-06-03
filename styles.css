@@ -1419,6 +1419,7 @@ a.feat-card:hover .feat-p { color: var(--navy); }
   .nav-inner { height: 64px; }
   .nav-logo-img { height: 44px; }
   .nav-right .lang-toggle { display: none; }
+  .page-hero .page-lead { font-size: 16px; }
   .hero { padding-top: 44px; }
   .hero h1 { font-size: 32px; }
   .hero-lead { font-size: 15px; margin-bottom: 26px; }
@@ -1462,6 +1463,9 @@ a.feat-card:hover .feat-p { color: var(--navy); }
   .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
   .section-h { font-size: 26px; }
   .section-sub { font-size: 15px; }
+  .page-hero .page-lead { font-size: 15px; }
+  .cta-p { font-size: 15px; }
+  .faq-item summary { font-size: 14.5px; padding: 16px 20px; }
   .cta-btns .btn { width: 100%; justify-content: center; }
   .cta-btns { flex-direction: column; align-items: center; }
   .roles-grid { grid-template-columns: 1fr; }

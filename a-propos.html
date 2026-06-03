@@ -31,12 +31,19 @@
     .value-item p { font-size:14px; color:var(--text-muted); line-height:1.6; }
     .story-stats { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
     @media (max-width:900px){ .values-grid{grid-template-columns:1fr 1fr;} }
+    @media (max-width:720px){
+      .page-hero { padding:60px 0 70px; }
+      .page-hero .page-lead { font-size:16px; }
+      .mvv-card { padding:26px; }
+    }
     @media (max-width:560px){ .values-grid{grid-template-columns:1fr;} .story-stats { gap:14px; } }
     @media (max-width:480px){
-      .page-hero { padding:56px 0 64px; }
+      .page-hero { padding:50px 0 60px; }
+      .page-hero .page-lead { font-size:15px; }
+      .mvv-card { padding:22px; }
       .story-stats { gap:12px; }
       .story-stats > div { padding:18px; }
-      .story-stats > div > div:first-child { font-size:32px; }
+      .story-stats > div > div:first-child { font-size:30px; }
     }
   </style>
 </head>

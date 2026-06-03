@@ -30,9 +30,17 @@
     .role-detail ul li::before { content:''; flex-shrink:0; width:6px; height:6px; border-radius:50%; background:var(--green); margin-top:7px; }
     .roles-stack { display:grid; gap:18px; }
     .device-stats { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:34px; }
-    @media (max-width:720px){ .role-detail{grid-template-columns:1fr; gap:16px;} .role-detail ul{grid-template-columns:1fr;} }
+    @media (max-width:720px){
+      .page-hero { padding:60px 0 70px; }
+      .page-hero .page-lead { font-size:16px; }
+      .role-detail { grid-template-columns:1fr; gap:16px; }
+      .role-detail ul { grid-template-columns:1fr; }
+    }
     @media (max-width:480px){
-      .page-hero { padding:56px 0 64px; }
+      .page-hero { padding:50px 0 60px; }
+      .page-hero .page-lead { font-size:15px; }
+      .role-detail { padding:22px 18px; }
+      .role-detail h3 { font-size:18px; }
       .device-stats { gap:16px; margin-top:24px; }
       .device-stats > div > div:first-child { font-size:26px; }
     }
