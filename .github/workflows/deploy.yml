@@ -1,0 +1,31 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.cluster129.hosting.ovh.net
+          username: locolpo
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /www/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .claude/**
+            deploy_ovh.py
+            *.pptx
+            chats/**
+            project/**
