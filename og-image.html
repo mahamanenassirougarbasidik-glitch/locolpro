@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background: #0a1a37;
+      position: relative;
+    }
+
+    /* Decorative blobs */
+    .blob-green {
+      position: absolute;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(58,170,92,0.18) 0%, transparent 65%);
+      top: -160px; right: -80px;
+    }
+    .blob-blue {
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(22,53,101,0.9) 0%, transparent 70%);
+      bottom: -120px; left: -60px;
+    }
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Layout */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+    .left {
+      flex: 1;
+      padding: 60px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .right {
+      width: 340px;
+      padding: 50px 50px 50px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    /* Logo */
+    .logo { height: 64px; object-fit: contain; object-position: left; margin-bottom: 28px; }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(58,170,92,0.14);
+      border: 1px solid rgba(58,170,92,0.38);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: #84e0a3;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-bottom: 22px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #3aaa5c;
+      animation: none;
+    }
+
+    /* Headline */
+    h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, #5fd87a, #3aaa5c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Description */
+    .desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    /* URL */
+    .url-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+    }
+    .url-tag::before {
+      content: '';
+      display: block;
+      width: 18px; height: 2px;
+      background: rgba(58,170,92,0.6);
+      border-radius: 2px;
+    }
+
+    /* Feature pills (right) */
+    .pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .pill-icon {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: rgba(58,170,92,0.18);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pill-icon svg { width: 16px; height: 16px; color: #3aaa5c; }
+
+    /* Separator line */
+    .sep {
+      position: absolute;
+      top: 60px; bottom: 60px;
+      left: 860px;
+      width: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+  </style>
+</head>
+<body>
+  <div class="blob-green"></div>
+  <div class="blob-blue"></div>
+  <div class="grid-lines"></div>
+  <div class="sep"></div>
+
+  <div class="wrapper">
+    <div class="left">
+      <img src="logo-blanc.png" class="logo" alt="LocolPro" />
+      <div class="badge"><span class="badge-dot"></span>Logiciel de gestion scolaire · Niger</div>
+      <h1>La gestion scolaire,<br><em>enfin centralisée.</em></h1>
+      <p class="desc">Élèves, notes, présences, paiements et communication parents-école — tout depuis une seule interface.</p>
+      <div class="url-tag">locolpro.com</div>
+    </div>
+
+    <div class="right">
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa5c" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        Gestion des élèves
+      </div>
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa5c" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        Bulletins de notes
+      </div>
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa5c" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        Suivi des présences
+      </div>
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa5c" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        Paiements de scolarité
+      </div>
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa5c" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        Communication parents
+      </div>
+    </div>
+  </div>
+</body>
+</html>

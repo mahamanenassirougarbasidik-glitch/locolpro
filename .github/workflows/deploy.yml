@@ -33,3 +33,4 @@ jobs:
             *.pptx
             chats/**
             project/**
+            og-image.html
