@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Gestion scolaire & transformation numérique au Niger | LocolPro</title>
+
+  <meta name="description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger. Découvrez comment les écoles optimisent leur administration avec LocolPro." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Nexus Digital" />
+  <meta name="theme-color" content="#163565" />
+
+  <link rel="canonical" href="https://locolpro.com/blog.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LocolPro" />
+  <meta property="og:title" content="Blog — Gestion scolaire & transformation numérique au Niger" />
+  <meta property="og:description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger. Découvrez comment les écoles optimisent leur administration avec LocolPro." />
+  <meta property="og:url" content="https://locolpro.com/blog.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://locolpro.com/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Gestion scolaire & transformation numérique au Niger" />
+  <meta name="twitter:description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger." />
+  <meta name="twitter:image" content="https://locolpro.com/og-image.png" />
+
+  <link rel="alternate" hreflang="fr" href="https://locolpro.com/blog.html" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+
+  <style>
+    /* Blog hero */
+    .blog-hero {
+      position: relative;
+      background: var(--navy-deep);
+      color: white;
+      padding: 80px 0 90px;
+      overflow: hidden;
+      isolation: isolate;
+      text-align: center;
+    }
+    .blog-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: -2;
+      background-image: linear-gradient(180deg, rgba(10,26,55,0.90), rgba(10,26,55,0.98)),
+        url('https://images.pexels.com/photos/5905489/pexels-photo-5905489.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop');
+      background-size: cover; background-position: center;
+    }
+    .blog-hero::after {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background-image: radial-gradient(circle at 50% 30%, rgba(58,170,92,0.14), transparent 55%);
+    }
+    .blog-hero .eb {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(58,170,92,0.16); border: 1px solid rgba(58,170,92,0.4);
+      border-radius: 999px; padding: 6px 16px; font-size: 12.5px;
+      color: #84e0a3; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      animation: fadeUp 700ms var(--ease-out) both;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.1;
+      margin: 16px auto 14px; max-width: 16ch; text-wrap: balance;
+      animation: fadeUp 800ms var(--ease-out) 80ms both;
+    }
+    .blog-hero p {
+      font-size: 17px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto;
+      line-height: 1.6; animation: fadeUp 800ms var(--ease-out) 160ms both;
+    }
+
+    /* Blog grid */
+    .blog-section { padding: 64px 0 96px; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    /* Article card */
+    .blog-card {
+      background: white; border: 1px solid var(--gray-200);
+      border-radius: 22px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: box-shadow 240ms, border-color 240ms, transform 240ms;
+      text-decoration: none; color: inherit;
+    }
+    .blog-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--navy);
+      transform: translateY(-3px);
+    }
+    .blog-card-img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      background: var(--navy-pale);
+    }
+    .blog-card-img-placeholder {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--navy) 0%, #1a4a80 50%, #163565 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .blog-card-img-placeholder::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 70% 30%, rgba(58,170,92,0.25), transparent 50%);
+    }
+    .blog-card-img-placeholder svg {
+      width: 48px; height: 48px; opacity: 0.3; color: white; z-index: 1;
+    }
+    .blog-card-body { padding: 26px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-tag {
+      display: inline-block; background: var(--navy-pale); color: var(--navy);
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 6px; padding: 4px 10px; margin-bottom: 14px;
+    }
+    .blog-card h2 {
+      font-family: var(--font-display); font-size: 19px; font-weight: 800;
+      color: var(--navy); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.02em;
+    }
+    .blog-card p {
+      font-size: 14.5px; color: var(--text-muted); line-height: 1.65; flex: 1;
+    }
+    .blog-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--gray-100);
+    }
+    .blog-card-date { font-size: 13px; color: var(--text-muted); }
+    .blog-card-read {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13.5px; font-weight: 700; color: var(--navy);
+      opacity: 0.85; transition: opacity 150ms;
+    }
+    .blog-card:hover .blog-card-read { opacity: 1; }
+    .blog-card-read svg { width: 14px; height: 14px; }
+
+    @media (max-width: 600px) {
+      .blog-hero { padding: 60px 0 70px; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body data-screen-label="Blog">
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="LocolPro">
+        <img src="logo.png" alt="LocolPro" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+        <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+        <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+        <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Langue">
+          <button data-lang="fr" class="active">FR</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a href="https://app.locolpro.com" class="btn btn-ghost">Se connecter</a>
+        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <button class="nav-burger" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <div class="mm-cta">
+      <a href="contact.html" class="btn btn-primary btn-lg">Demander une démo</a>
+      <a href="https://app.locolpro.com" class="btn btn-ghost btn-lg">Se connecter</a>
+    </div>
+  </div>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="wrap">
+      <span class="eb">Blog & Ressources</span>
+      <h1>Gestion scolaire & transformation numérique</h1>
+      <p>Conseils pratiques, guides et actualités pour aider les établissements scolaires du Niger à mieux s'organiser grâce au numérique.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <section class="blog-section">
+    <div class="wrap">
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <a href="blog/transformation-numerique-ecole-niger.html" class="blog-card">
+          <div class="blog-card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0 1 21 20a12.083 12.083 0 0 1-9 0 12.083 12.083 0 0 1-9 0 12.083 12.083 0 0 1 2.84-9.422L12 14z"/></svg>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Transformation numérique</span>
+            <h2>10 signes que votre école est prête pour la transformation numérique</h2>
+            <p>La digitalisation est un levier essentiel pour améliorer la gestion scolaire. Découvrez les 10 signaux concrets qui indiquent que votre établissement est prêt à franchir le pas.</p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">12 juin 2026</span>
+              <span class="blog-card-read">
+                Lire l'article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><img src="logo-blanc.png" alt="LocolPro" class="nav-logo-img" /></a>
+        <p data-fr="LocolPro est la plateforme de gestion scolaire au Niger, éditée par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is Niger's school management platform, built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">LocolPro est la plateforme de gestion scolaire au Niger, éditée par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
+      </div>
+      <div class="footer-col"><h4 data-fr="Produit" data-en="Product">Produit</h4><ul><li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li><li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li><li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Entreprise" data-en="Company">Entreprise</h4><ul><li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Ressources" data-en="Resources">Ressources</h4><ul><li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li><li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li></ul></div>
+      <div class="footer-col"><h4 data-fr="Contact" data-en="Contact">Contact</h4><ul><li><a href="tel:+22770170717">+227 70 17 07 17</a></li><li><a href="mailto:info@locolpro.com">info@locolpro.com</a></li><li><a href="https://wa.me/22770170717">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a><a href="#" data-fr="Conditions" data-en="Terms">Conditions</a></div></div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
