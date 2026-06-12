@@ -4,27 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog — Gestion scolaire & transformation numérique au Niger | LocolPro</title>
-
   <meta name="description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger. Découvrez comment les écoles optimisent leur administration avec LocolPro." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Nexus Digital" />
   <meta name="theme-color" content="#163565" />
-
   <link rel="canonical" href="https://locolpro.com/blog.html" />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LocolPro" />
   <meta property="og:title" content="Blog — Gestion scolaire & transformation numérique au Niger" />
-  <meta property="og:description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger. Découvrez comment les écoles optimisent leur administration avec LocolPro." />
+  <meta property="og:description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger." />
   <meta property="og:url" content="https://locolpro.com/blog.html" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:image" content="https://locolpro.com/og-image.png" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog — Gestion scolaire & transformation numérique au Niger" />
   <meta name="twitter:description" content="Conseils, guides et actualités sur la gestion scolaire numérique au Niger." />
   <meta name="twitter:image" content="https://locolpro.com/og-image.png" />
-
   <link rel="alternate" hreflang="fr" href="https://locolpro.com/blog.html" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -33,114 +28,305 @@
   <link rel="preconnect" href="https://images.pexels.com" crossorigin />
 
   <style>
-    /* Blog hero */
-    .blog-hero {
-      position: relative;
+    /* ── BLOG HERO ── */
+    .bl-hero {
       background: var(--navy-deep);
-      color: white;
-      padding: 80px 0 90px;
+      position: relative;
+      padding: 80px 0 100px;
       overflow: hidden;
       isolation: isolate;
-      text-align: center;
     }
-    .blog-hero::before {
-      content: ''; position: absolute; inset: 0; z-index: -2;
-      background-image: linear-gradient(180deg, rgba(10,26,55,0.90), rgba(10,26,55,0.98)),
-        url('https://images.pexels.com/photos/5905489/pexels-photo-5905489.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop');
-      background-size: cover; background-position: center;
-    }
-    .blog-hero::after {
-      content: ''; position: absolute; inset: 0; z-index: -1;
-      background-image: radial-gradient(circle at 50% 30%, rgba(58,170,92,0.14), transparent 55%);
-    }
-    .blog-hero .eb {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(58,170,92,0.16); border: 1px solid rgba(58,170,92,0.4);
-      border-radius: 999px; padding: 6px 16px; font-size: 12.5px;
-      color: #84e0a3; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-      animation: fadeUp 700ms var(--ease-out) both;
-    }
-    .blog-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4.5vw, 52px);
-      font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.1;
-      margin: 16px auto 14px; max-width: 16ch; text-wrap: balance;
-      animation: fadeUp 800ms var(--ease-out) 80ms both;
-    }
-    .blog-hero p {
-      font-size: 17px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto;
-      line-height: 1.6; animation: fadeUp 800ms var(--ease-out) 160ms both;
-    }
-
-    /* Blog grid */
-    .blog-section { padding: 64px 0 96px; }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
-      margin-top: 48px;
-    }
-
-    /* Article card */
-    .blog-card {
-      background: white; border: 1px solid var(--gray-200);
-      border-radius: 22px; overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: box-shadow 240ms, border-color 240ms, transform 240ms;
-      text-decoration: none; color: inherit;
-    }
-    .blog-card:hover {
-      box-shadow: var(--shadow-lg);
-      border-color: var(--navy);
-      transform: translateY(-3px);
-    }
-    .blog-card-img {
-      width: 100%; aspect-ratio: 16/9; object-fit: cover;
-      background: var(--navy-pale);
-    }
-    .blog-card-img-placeholder {
-      width: 100%; aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--navy) 0%, #1a4a80 50%, #163565 100%);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .blog-card-img-placeholder::after {
+    .bl-hero::before {
       content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 70% 30%, rgba(58,170,92,0.25), transparent 50%);
+      position: absolute; inset: 0; z-index: -2;
+      background:
+        linear-gradient(160deg, rgba(10,26,55,0.97) 0%, rgba(22,53,101,0.85) 60%, rgba(10,26,55,0.92) 100%),
+        url('https://images.pexels.com/photos/5905489/pexels-photo-5905489.jpeg?auto=compress&cs=tinysrgb&w=1920&h=700&fit=crop');
+      background-size: cover; background-position: center 30%;
     }
-    .blog-card-img-placeholder svg {
-      width: 48px; height: 48px; opacity: 0.3; color: white; z-index: 1;
+    .bl-hero::after {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(58,170,92,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 20%, rgba(30,74,138,0.4) 0%, transparent 45%);
     }
-    .blog-card-body { padding: 26px 28px 28px; flex: 1; display: flex; flex-direction: column; }
-    .blog-card-tag {
-      display: inline-block; background: var(--navy-pale); color: var(--navy);
-      font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      border-radius: 6px; padding: 4px 10px; margin-bottom: 14px;
+    /* Dot grid overlay */
+    .bl-hero-dots {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 100% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 50%, black 0%, transparent 100%);
     }
-    .blog-card h2 {
-      font-family: var(--font-display); font-size: 19px; font-weight: 800;
-      color: var(--navy); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.02em;
+    .bl-hero-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
     }
-    .blog-card p {
-      font-size: 14.5px; color: var(--text-muted); line-height: 1.65; flex: 1;
+    .bl-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(58,170,92,0.15); border: 1px solid rgba(58,170,92,0.38);
+      border-radius: 999px; padding: 6px 16px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #84e0a3; margin-bottom: 22px;
+      animation: fadeUp 600ms var(--ease-out) both;
     }
-    .blog-card-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--gray-100);
+    .bl-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #5fd87a; flex-shrink: 0; }
+    .bl-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: 800; color: white;
+      letter-spacing: -0.03em; line-height: 1.08;
+      text-wrap: balance; margin-bottom: 18px;
+      animation: fadeUp 700ms var(--ease-out) 60ms both;
     }
-    .blog-card-date { font-size: 13px; color: var(--text-muted); }
-    .blog-card-read {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13.5px; font-weight: 700; color: var(--navy);
-      opacity: 0.85; transition: opacity 150ms;
+    .bl-hero h1 em { font-style: normal; color: #5fd87a; }
+    .bl-hero-lead {
+      font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.65;
+      max-width: 460px; margin-bottom: 36px;
+      animation: fadeUp 700ms var(--ease-out) 120ms both;
     }
-    .blog-card:hover .blog-card-read { opacity: 1; }
-    .blog-card-read svg { width: 14px; height: 14px; }
+    .bl-hero-stats {
+      display: flex; gap: 32px;
+      animation: fadeUp 700ms var(--ease-out) 180ms both;
+    }
+    .bl-stat-num {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 800; color: white; letter-spacing: -0.03em;
+    }
+    .bl-stat-num span { color: var(--green); }
+    .bl-stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; font-weight: 500; }
 
-    @media (max-width: 600px) {
-      .blog-hero { padding: 60px 0 70px; }
-      .blog-grid { grid-template-columns: 1fr; }
+    /* Featured card in hero */
+    .bl-feat-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+      animation: fadeUp 900ms var(--ease-out) 200ms both;
+      text-decoration: none; color: inherit; display: block;
+      transition: transform 320ms var(--ease-out), box-shadow 320ms;
+    }
+    .bl-feat-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 50px 100px -20px rgba(0,0,0,0.6); }
+    .bl-feat-img {
+      width: 100%; aspect-ratio: 16/10; overflow: hidden;
+      background: var(--navy);
+      position: relative;
+    }
+    .bl-feat-img-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(155deg, var(--navy) 0%, #1a4a80 40%, #0f3060 100%);
+    }
+    .bl-feat-img-glow {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 25%, rgba(58,170,92,0.3) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(30,74,138,0.5) 0%, transparent 45%);
+    }
+    .bl-feat-img-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .bl-feat-img-icon {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bl-feat-icon-ring {
+      width: 88px; height: 88px; border-radius: 24px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .bl-feat-icon-ring svg { width: 40px; height: 40px; color: rgba(255,255,255,0.85); }
+    .bl-feat-tag {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--green); color: white;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 8px; padding: 4px 12px;
+      box-shadow: 0 4px 14px rgba(58,170,92,0.4);
+    }
+    .bl-feat-body { padding: 22px 24px 24px; }
+    .bl-feat-title {
+      font-family: var(--font-display);
+      font-size: 17px; font-weight: 800; color: var(--navy);
+      line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px;
+    }
+    .bl-feat-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 12px; color: var(--text-muted); margin-top: 14px;
+      padding-top: 14px; border-top: 1px solid var(--gray-100);
+    }
+    .bl-feat-meta-left { display: flex; align-items: center; gap: 10px; }
+    .bl-feat-read {
+      display: flex; align-items: center; gap: 5px;
+      font-weight: 700; color: var(--navy); font-size: 12.5px;
+    }
+    .bl-feat-read svg { width: 13px; height: 13px; }
+
+    /* ── SECTIONS ── */
+    .bl-section {
+      padding: 80px 0 96px;
+      background: var(--gray-50);
+    }
+    .bl-section-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px; margin-bottom: 44px;
+    }
+    .bl-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 32px); font-weight: 800;
+      color: var(--navy); letter-spacing: -0.025em; line-height: 1.15;
+    }
+    .bl-section-sub {
+      font-size: 15px; color: var(--text-muted); margin-top: 6px; line-height: 1.6;
+    }
+
+    /* ── GRID ── */
+    .bl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 26px;
+    }
+
+    /* ── CARD ── */
+    .bl-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--gray-200);
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      transition: transform 280ms var(--ease-out), box-shadow 280ms, border-color 280ms;
+    }
+    .bl-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--navy-mist);
+    }
+    .bl-card-visual {
+      width: 100%; aspect-ratio: 16/9;
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+    }
+    .bl-card-visual-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(140deg, var(--navy) 0%, #1a4a80 50%, var(--navy-deep) 100%);
+      transition: transform 500ms var(--ease-out);
+    }
+    .bl-card:hover .bl-card-visual-bg { transform: scale(1.06); }
+    .bl-card-visual-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 75% 25%, rgba(58,170,92,0.28) 0%, transparent 60%);
+    }
+    .bl-card-visual-icon {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bl-card-icon-box {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: transform 300ms var(--ease-spring);
+    }
+    .bl-card:hover .bl-card-icon-box { transform: scale(1.08) rotate(-4deg); }
+    .bl-card-icon-box svg { width: 30px; height: 30px; color: rgba(255,255,255,0.85); }
+    .bl-card-cat-tag {
+      position: absolute; top: 14px; left: 14px;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 7px; padding: 4px 11px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+    }
+    .bl-card-body { padding: 24px 26px 26px; flex: 1; display: flex; flex-direction: column; }
+    .bl-card-title {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 800; color: var(--navy);
+      line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 10px;
+      transition: color 200ms;
+    }
+    .bl-card:hover .bl-card-title { color: var(--navy-light); }
+    .bl-card-excerpt {
+      font-size: 14px; color: var(--text-muted); line-height: 1.65; flex: 1;
+    }
+    .bl-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray-100);
+    }
+    .bl-card-meta-info { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-muted); }
+    .bl-card-meta-info svg { width: 13px; height: 13px; color: var(--gray-400); }
+    .bl-card-arrow {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: var(--navy-pale); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 200ms, transform 200ms;
+      flex-shrink: 0;
+    }
+    .bl-card:hover .bl-card-arrow { background: var(--navy); color: white; transform: translateX(3px); }
+    .bl-card-arrow svg { width: 15px; height: 15px; }
+
+    /* ── NEWSLETTER CTA ── */
+    .bl-newsletter {
+      margin-top: 64px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 24px;
+      padding: 52px 56px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bl-newsletter::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(58,170,92,0.2) 0%, transparent 55%);
+    }
+    .bl-newsletter::after {
+      content: ''; position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%; border: 1px solid rgba(255,255,255,0.06);
+      top: -80px; right: 80px;
+    }
+    .bl-nl-text { position: relative; z-index: 1; }
+    .bl-nl-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(58,170,92,0.2); border: 1px solid rgba(58,170,92,0.35);
+      border-radius: 999px; padding: 5px 14px;
+      font-size: 11.5px; font-weight: 700; color: #84e0a3;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .bl-nl-title {
+      font-family: var(--font-display);
+      font-size: 24px; font-weight: 800; color: white;
+      letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 8px;
+    }
+    .bl-nl-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+    .bl-nl-action { position: relative; z-index: 1; }
+    .bl-nl-action .btn-primary { white-space: nowrap; padding: 14px 28px; font-size: 15px; }
+    .bl-nl-note { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 10px; text-align: center; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
+      .bl-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .bl-feat-card { max-width: 520px; }
+      .bl-newsletter { grid-template-columns: 1fr; padding: 36px 32px; gap: 24px; }
+      .bl-nl-action { text-align: center; }
+    }
+    @media (max-width: 720px) {
+      .bl-hero { padding: 60px 0 70px; }
+      .bl-hero-stats { gap: 24px; }
+      .bl-section { padding: 56px 0 72px; }
+      .bl-section-head { flex-direction: column; align-items: flex-start; gap: 0; }
+      .bl-grid { grid-template-columns: 1fr; }
+      .bl-newsletter { padding: 28px 24px; }
     }
   </style>
 </head>
@@ -167,7 +353,7 @@
           <button data-lang="en">EN</button>
         </div>
         <a href="https://app.locolpro.com" class="btn btn-ghost">Se connecter</a>
-        <a href="contact.html" class="btn btn-primary" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a>
+        <a href="contact.html" class="btn btn-primary">Demander une démo</a>
         <button class="nav-burger" aria-label="Menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="#163565" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
@@ -175,48 +361,70 @@
     </div>
   </header>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu">
-    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
-    <a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a>
-    <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
-    <a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <a href="index.html">Accueil</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="plateforme.html">Plateforme</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
     <div class="mm-cta">
       <a href="contact.html" class="btn btn-primary btn-lg">Demander une démo</a>
       <a href="https://app.locolpro.com" class="btn btn-ghost btn-lg">Se connecter</a>
     </div>
   </div>
 
-  <!-- BLOG HERO -->
-  <section class="blog-hero">
+  <!-- ── HERO ── -->
+  <section class="bl-hero">
+    <div class="bl-hero-dots"></div>
     <div class="wrap">
-      <span class="eb">Blog & Ressources</span>
-      <h1>Gestion scolaire & transformation numérique</h1>
-      <p>Conseils pratiques, guides et actualités pour aider les établissements scolaires du Niger à mieux s'organiser grâce au numérique.</p>
-    </div>
-  </section>
+      <div class="bl-hero-inner">
 
-  <!-- ARTICLES GRID -->
-  <section class="blog-section">
-    <div class="wrap">
-      <div class="blog-grid">
-
-        <!-- Article 1 -->
-        <a href="blog/transformation-numerique-ecole-niger.html" class="blog-card">
-          <div class="blog-card-img-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0 1 21 20a12.083 12.083 0 0 1-9 0 12.083 12.083 0 0 1-9 0 12.083 12.083 0 0 1 2.84-9.422L12 14z"/></svg>
+        <!-- Left: headline -->
+        <div>
+          <span class="bl-eyebrow"><span class="dot"></span> Blog & Ressources</span>
+          <h1>Tout sur la <em>gestion scolaire</em> numérique au Niger</h1>
+          <p class="bl-hero-lead">Guides pratiques, retours d'expérience et conseils d'experts pour aider les directeurs d'école à mieux piloter leur établissement.</p>
+          <div class="bl-hero-stats">
+            <div>
+              <div class="bl-stat-num">1<span>+</span></div>
+              <div class="bl-stat-lbl">Article publié</div>
+            </div>
+            <div>
+              <div class="bl-stat-num">5<span> min</span></div>
+              <div class="bl-stat-lbl">Lecture moyenne</div>
+            </div>
+            <div>
+              <div class="bl-stat-num">100<span>%</span></div>
+              <div class="bl-stat-lbl">Gratuit</div>
+            </div>
           </div>
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Transformation numérique</span>
-            <h2>10 signes que votre école est prête pour la transformation numérique</h2>
-            <p>La digitalisation est un levier essentiel pour améliorer la gestion scolaire. Découvrez les 10 signaux concrets qui indiquent que votre établissement est prêt à franchir le pas.</p>
-            <div class="blog-card-footer">
-              <span class="blog-card-date">12 juin 2026</span>
-              <span class="blog-card-read">
-                Lire l'article
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+
+        <!-- Right: featured article card -->
+        <a href="blog/transformation-numerique-ecole-niger.html" class="bl-feat-card">
+          <div class="bl-feat-img">
+            <div class="bl-feat-img-bg"></div>
+            <div class="bl-feat-img-glow"></div>
+            <div class="bl-feat-img-pattern"></div>
+            <div class="bl-feat-img-icon">
+              <div class="bl-feat-icon-ring">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <span class="bl-feat-tag">À la une</span>
+          </div>
+          <div class="bl-feat-body">
+            <div class="bl-feat-title">10 signes que votre école est prête pour la transformation numérique</div>
+            <p style="font-size:13.5px;color:var(--text-muted);line-height:1.55;">Découvrez les signaux concrets qui indiquent que votre établissement est prêt à digitaliser sa gestion.</p>
+            <div class="bl-feat-meta">
+              <div class="bl-feat-meta-left">
+                <span style="background:var(--navy-pale);color:var(--navy);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.06em;">Transformation numérique</span>
+                <span>12 juin 2026</span>
+              </div>
+              <span class="bl-feat-read">
+                Lire
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </span>
             </div>
           </div>
@@ -226,21 +434,95 @@
     </div>
   </section>
 
+  <!-- ── ARTICLES ── -->
+  <section class="bl-section">
+    <div class="wrap">
+      <div class="bl-section-head">
+        <div>
+          <h2 class="bl-section-title">Tous les articles</h2>
+          <p class="bl-section-sub">Ressources gratuites pour les responsables d'établissements scolaires</p>
+        </div>
+        <span style="font-size:13px;color:var(--text-muted);font-weight:600;white-space:nowrap;">1 article</span>
+      </div>
+
+      <div class="bl-grid">
+
+        <!-- Article 1 -->
+        <a href="blog/transformation-numerique-ecole-niger.html" class="bl-card reveal-on-view">
+          <div class="bl-card-visual">
+            <div class="bl-card-visual-bg"></div>
+            <div class="bl-card-visual-glow"></div>
+            <div class="bl-card-visual-icon">
+              <div class="bl-card-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <span class="bl-card-cat-tag">Transformation numérique</span>
+          </div>
+          <div class="bl-card-body">
+            <h2 class="bl-card-title">10 signes que votre école est prête pour la transformation numérique</h2>
+            <p class="bl-card-excerpt">La digitalisation est un levier essentiel pour améliorer la gestion scolaire au Niger. Découvrez les 10 signaux concrets qui indiquent que votre établissement est prêt à franchir le pas.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta-info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                12 juin 2026
+                <span style="width:3px;height:3px;border-radius:50%;background:var(--gray-300);display:inline-block;"></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                5 min
+              </div>
+              <div class="bl-card-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Newsletter CTA -->
+      <div class="bl-newsletter reveal-on-view">
+        <div class="bl-nl-text">
+          <span class="bl-nl-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Nouveau contenu régulièrement
+          </span>
+          <h3 class="bl-nl-title">Vous dirigez un établissement scolaire ?</h3>
+          <p class="bl-nl-sub">Découvrez comment LocolPro peut simplifier votre gestion au quotidien. Échangez directement avec notre équipe.</p>
+        </div>
+        <div class="bl-nl-action">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            Parler à un expert
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="bl-nl-note">Réponse en moins de 24h</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="nav-logo" href="index.html"><img src="logo-blanc.png" alt="LocolPro" class="nav-logo-img" /></a>
-        <p data-fr="LocolPro est la plateforme de gestion scolaire au Niger, éditée par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains." data-en="LocolPro is Niger's school management platform, built by Nexus Digital — empowering schools' digital journey with simple, secure, human tools.">LocolPro est la plateforme de gestion scolaire au Niger, éditée par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
+        <p>LocolPro est la plateforme de gestion scolaire au Niger, éditée par Nexus Digital — accompagner la digitalisation des écoles avec des outils simples, sécurisés et humains.</p>
       </div>
-      <div class="footer-col"><h4 data-fr="Produit" data-en="Product">Produit</h4><ul><li><a href="fonctionnalites.html" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a></li><li><a href="plateforme.html" data-fr="Plateforme" data-en="Platform">Plateforme</a></li><li><a href="contact.html" data-fr="Demander une démo" data-en="Request a demo">Demander une démo</a></li></ul></div>
-      <div class="footer-col"><h4 data-fr="Entreprise" data-en="Company">Entreprise</h4><ul><li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4 data-fr="Ressources" data-en="Resources">Ressources</h4><ul><li><a href="faq.html" data-fr="FAQ" data-en="FAQ">FAQ</a></li><li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li></ul></div>
-      <div class="footer-col"><h4 data-fr="Contact" data-en="Contact">Contact</h4><ul><li><a href="tel:+22770170717">+227 70 17 07 17</a></li><li><a href="mailto:info@locolpro.com">info@locolpro.com</a></li><li><a href="https://wa.me/22770170717">WhatsApp</a></li></ul></div>
+      <div class="footer-col"><h4>Produit</h4><ul><li><a href="fonctionnalites.html">Fonctionnalités</a></li><li><a href="plateforme.html">Plateforme</a></li><li><a href="contact.html">Demander une démo</a></li></ul></div>
+      <div class="footer-col"><h4>Entreprise</h4><ul><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22770170717">+227 70 17 07 17</a></li><li><a href="mailto:info@locolpro.com">info@locolpro.com</a></li><li><a href="https://wa.me/22770170717">WhatsApp</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a><a href="#" data-fr="Conditions" data-en="Terms">Conditions</a></div></div>
+    <div class="footer-bottom"><span>© 2026 Nexus Digital · LocolPro</span><div class="legal"><a href="#">Confidentialité</a><a href="#">Conditions</a></div></div>
   </footer>
 
   <script src="site.js"></script>
+  <script>
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-view').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
