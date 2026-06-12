@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /project/
+Disallow: /chats/
+
+Sitemap: https://locolpro.com/sitemap.xml

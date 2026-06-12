@@ -8,15 +8,42 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>LocolPro — La gestion scolaire, enfin centralisée</title>
+  <title>LocolPro — Logiciel de gestion scolaire pour écoles, collèges et lycées au Niger</title>
+
+  <meta name="description" content="LocolPro est la plateforme de gestion scolaire tout-en-un pour les établissements au Niger. Gérez élèves, notes, présences, paiements et communication parents-école depuis une seule interface." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Nexus Digital" />
+  <meta name="theme-color" content="#163565" />
+
+  <link rel="canonical" href="https://locolpro.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LocolPro" />
+  <meta property="og:title" content="LocolPro — Logiciel de gestion scolaire au Niger" />
+  <meta property="og:description" content="Plateforme tout-en-un pour piloter votre établissement scolaire : élèves, notes, présences, paiements et communication parents-école." />
+  <meta property="og:url" content="https://locolpro.com/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://locolpro.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LocolPro — Logiciel de gestion scolaire au Niger" />
+  <meta name="twitter:description" content="Plateforme tout-en-un pour piloter votre établissement scolaire : élèves, notes, présences, paiements et communication." />
+  <meta name="twitter:image" content="https://locolpro.com/og-image.png" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://locolpro.com/" />
+  <link rel="alternate" hreflang="en" href="https://locolpro.com/" />
 
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <link rel="stylesheet" href="styles.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
 
 </head>
 
@@ -560,7 +587,7 @@
 
         <div class="photo-split-img reveal-on-view">
 
-          <img src="https://images.pexels.com/photos/28593054/pexels-photo-28593054.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="" loading="lazy" />
+          <img src="https://images.pexels.com/photos/28593054/pexels-photo-28593054.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Directrice d'école qui consulte les bulletins scolaires en ligne sur la plateforme LocolPro" loading="lazy" />
 
           <div class="badge-overlay">
 
@@ -1023,6 +1050,61 @@
 
 
   <script src="site.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://locolpro.com/#organization",
+        "name": "Nexus Digital",
+        "url": "https://locolpro.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://locolpro.com/logo.png"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+22780800009",
+          "contactType": "customer service",
+          "areaServed": "NE",
+          "availableLanguage": "French"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Koira Kano",
+          "addressLocality": "Niamey",
+          "addressCountry": "NE"
+        },
+        "email": "info@locolpro.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://locolpro.com/#website",
+        "url": "https://locolpro.com",
+        "name": "LocolPro",
+        "description": "Logiciel de gestion scolaire pour écoles, collèges et lycées au Niger",
+        "publisher": { "@id": "https://locolpro.com/#organization" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "LocolPro",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Plateforme de gestion scolaire tout-en-un : élèves, notes, présences, paiements et communication parents-école pour les établissements au Niger.",
+        "url": "https://locolpro.com",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "areaServed": "NE"
+        },
+        "publisher": { "@id": "https://locolpro.com/#organization" }
+      }
+    ]
+  }
+  </script>
 
 </body>
 
